@@ -38,6 +38,8 @@ plusieurs jeux de données "propres" (càd qui ne contiennent pas d'info vide):
 =>ces jeux de données nous permettront de croiser différentes informations pour différentes représentations des résultats
 =>on a donc 4 jeux de données triées d'après les statistiques que nous voulons montrer sur le site à la fin
 
+=>notre trois jeux de données avec les ventes, les notes des critiques, et les niveaux ESRB contiennent beaucoup moins de données! Le jeu de données de base contient énormément d'exemples mais malheureusement, les données annexes (de ventes etc) sont peu fournies! 
+
 
 ***A NOTER***
 
