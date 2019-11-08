@@ -1,0 +1,39 @@
+****Modélisation XML pour nos données****
+
+->pour le fichier basic.csv:
+
+<collection>
+	<game rank="1">
+		<name>
+			<official>
+			<ascii>
+		</name>
+		<genre></genre>
+		<platform></platform>
+		<production>
+			<publisher>
+			<developer>
+		</production>
+		<year></year>
+	</game>
+</collection>
+
+->pour le fichier plus_sales.csv
+
+On met tous les éléments qu'il y dans basic.csv + ça:
+	<distribution>
+		<sales area="global"></sales>
+		<sales area="usa"></sales>
+		<sales area="europe"></sales>
+		<sales area="japan"></sales>
+	</distribution>
+	
+->pour le fichier plus_critic_sales.csv
+
+On met tous les éléments qu'il y a dans basic.csv + plus_sales.csv + ça:
+	<critic_score></critic_score>
+	
+->pour le fichier plus_esrb_sales_csv
+
+On met tous les éléments qu'il y a dans basic.csv + plus_sales + ça:
+	<esrb_rating></esrb_rating>

@@ -1,0 +1,45 @@
+****Prise de notes pour le projet XML****
+
+***Visualisation des données***
+
+-global sales : 36 377 sur 55 792 données qui n'ont rien
+-na sales: 42 828 qui n'ont rien
+-pal: 42 603 qui n'ont rien
+-jp: 48 649 qui n'ont rien
+-other sales : 40 270 qui n'ont rien
+
+-critic score: 49 256 qui n'ont rien
+-user score: 55 457 qui n'ont rien
+
+-ESRB: 32 169 vides
+
+-année: 979 vides
+
+-à partir de la colonne last_udpate: on ne garde pas ces infos (5 colonnes à enlever) + total_shipped qu'on ne garder et VGChartz score qu'on enlève aussi, ainsi que user score
+
+-stats: les ventes => quel type/genre de jeu/plateforme est le plus vendu dans quel pays + le moins vendu
+-l'âge des joueurs avec l'ESRB rating => dans quel pays?
+-les groupes de jeux: quel genre ils font le plus, sur quelles plateformes?
+-classement des genres, des plateformes, ESRB Rating
+-critic score: voir si les jeux les plus vendus ont une bonne note, voir quel genre de jeux mieux notés, quelle plateforme. Voir si les critiques impactent l'achat des jeux ou reflètent une réalité.
+-sur l'année: les jeux par décennies, et par époque: quels jeux sont les plus developpés, et quels sont les plus vendus
+
+=> on va essayer déjà de faire un fichier csv propre avec que les instances qu'on souhaite garder:
+plusieurs jeux de données "propres" (càd qui ne contiennent pas d'info vide):
+
+-jeu de données basique : pour faire les classements par genre, par plateforme, par publisher/developer => on va tout garder (toutes les instances) sauf ceux pour qui il manque l'année 
+
+-jeu de données pour stats "poussées" : on garde que les instances où on a toutes les infos (commerces, critic score, ESRB et année).
+=>on va en faire plusieurs!
+*jeu "sales" => toutes les données basiques + les sales
+*jeu "critic + sales" => toutes les données basqiues + sales + critic 
+*jeu "sales + esrb" => toutes les données basiques + sales + ESRB
+
+=>ces jeux de données nous permettront de croiser différentes informations pour différentes représentations des résultats
+=>on a donc 4 jeux de données triées d'après les statistiques que nous voulons montrer sur le site à la fin
+
+
+***A NOTER***
+
+-dans le jeu de données: on compare le Japon aux USA et à l'Europe (pas un pays!)
+
