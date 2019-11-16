@@ -62,6 +62,7 @@ for child in directory.iterdir():
         if child.match("vgsales*"):
             continue
         with open(child,"r",encoding="utf-8") as file:
+            
             print(f'Reading "{child.name}" to generate an XML document...\n')
             nameF = ""
             nameOut = child.stem + ".xml"
@@ -69,6 +70,7 @@ for child in directory.iterdir():
             
             table = csv.reader(file,delimiter = ",")
             next(table)
+            
             root = etree.Element("collection")
             for row in table:
                 if child.match("basic.csv"):
