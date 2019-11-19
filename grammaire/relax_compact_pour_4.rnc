@@ -1,0 +1,27 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+element collection {
+    element game {
+        attribute rank {xsd:int},
+        element name {
+            element official {text},
+            element ascii {text}
+        },
+        element genre {text},
+        element platform {text},
+        element production {
+            element publisher {text},
+            element developer {text}
+        },
+        element year {xsd:int},
+        element distribution {
+            element sales {
+                attribute area {text},
+                xsd:float
+            }+
+        }?,
+        element critic_score {xsd:float}?,
+        element esrb_rating {text}?   
+    }+
+}
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <ref name="Collection"/>
+    </start>
+    <define name="Collection">
+        <element name="collection">
+            <ref name="Game"/>
+        </element>
+    </define>
+    <define name="Game">
+        <oneOrMore>
+            <element name="game">
+                <attribute name="rank"><data type="int"/></attribute>
+                <ref name="Name"/>
+                <ref name="Genre"/>
+                <ref name="Platform"/>
+                <ref name="Production"/>
+                <ref name="Year"/>
+                <ref name="Distribution"/>
+                <ref name="Critic"/>
+                <ref name="Rating"/>
+            </element>
+        </oneOrMore>
+    </define>
+    <define name="Name">
+        <element name="name">
+            <element name="official"><text/></element>
+            <element name="ascii"><text/></element>
+        </element>
+    </define>
+    <define name="Genre">
+        <element name="genre"><text/></element>
+    </define>
+    <define name="Platform">
+        <element name="platform"><text/></element>
+    </define>
+    <define name="Production">
+        <element name="production">
+            <element name="publisher"><text/></element>
+            <element name="developer"><text/></element>
+        </element>
+    </define>
+    <define name="Year">
+        <element name="year"><data type="integer"/></element>
+    </define>
+    <define name="Distribution">
+        <optional>
+            <element name="distribution">
+                <oneOrMore>
+                    <element name="sales">
+                        <attribute name="area"/>
+                        <data type="float"/>
+                    </element>
+                </oneOrMore>
+            </element>
+        </optional>
+    </define>
+    <define name="Critic">
+        <optional>
+            <element name="critic_score"><data type="float"/></element>
+        </optional>
+    </define>
+    <define name="Rating">
+        <optional>
+            <element name="esrb_rating"><text/></element>
+        </optional>
+    </define>
+</grammar>
