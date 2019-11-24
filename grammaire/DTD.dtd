@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % STR "#PCDATA" >
+
+<!ELEMENT collection (game+)>
+<!ELEMENT game (name,genre,platform,production,year,distribution?,critic_score?,esrb_rating?) >
+<!ATTLIST game 
+               rank CDATA #REQUIRED >
+<!ELEMENT name (official,ascii) >
+<!ELEMENT official (%STR;) >
+<!ELEMENT ascii (%STR;) >
+<!ELEMENT genre (%STR;) >
+<!ELEMENT platform (%STR;) >
+<!ELEMENT production (publisher,developer) >
+<!ELEMENT publisher (%STR;) >
+<!ELEMENT developer (%STR;) >
+<!ELEMENT year (%STR;) >
+<!ELEMENT distribution (sales+) >
+<!ELEMENT sales (%STR;) >
+<!ATTLIST sales
+                area (global|usa|europe|japan) #REQUIRED >
+<!ELEMENT critic_score (%STR;) >
+<!ELEMENT esrb_rating (%STR;) >
