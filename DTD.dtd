@@ -1,4 +1,9 @@
-<!-- Le document de base qui permet de valider nos documents XML est la DTD (cf. photo d'un fichier xml validé). Cette DTD permet de décrire la structure logique et physique des quatres documents xml, c'est-à-dire indiquer les noms des éléments qui peuvent apparaitre et leur contenu ainsi que les entités globales qui nous évitent les répétitions. Nous avons utilisé une entité pour le type de donnée #PCDATA qui est une chaine de caractères. Il n'est malheureusement pas possible de donner plus de précision concernant le type de donnée (int, float, etc.) dans un schéma DTD. 
+<!-- Le document de base qui permet de valider nos documents XML est la DTD (cf. photo d'un fichier xml validé). 
+Cette DTD permet de décrire la structure logique et physique des quatres documents xml, 
+c'est-à-dire indiquer les noms des éléments qui peuvent apparaitre et leur contenu 
+ainsi que les entités globales qui nous évitent les répétitions. 
+Nous avons utilisé une entité pour le type de donnée #PCDATA qui est une chaine de caractères. 
+Il n'est malheureusement pas possible de donner plus de précision concernant le type de donnée (int, float, etc.) dans un schéma DTD. 
 Vous poucez visualiser ce-dessous ce schéma DTD: -->
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -64,7 +69,9 @@ Vous poucez visualiser ce-dessous ce schéma DTD: -->
 
 <!ELEMENT sales (%STR;) >
 
-<!-- Ici on définit l'attribut area pour l'élément sales qui prendra comme valeur soit "global", soit "usa", soit "europe", soit "japan". Pour un choix entre plusieurs éléments il n'est pas obligé de précisé le type CDATA. L'attribut est obligatoire -->
+<!-- Ici on définit l'attribut area pour l'élément sales qui prendra comme valeur 
+soit "global", soit "usa", soit "europe", soit "japan". 
+Pour un choix entre plusieurs éléments il n'est pas obligé de précisé le type CDATA. L'attribut est obligatoire -->
 
 <!ATTLIST sales
                 area (global|usa|europe|japan) #REQUIRED >
