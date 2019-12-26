@@ -3,14 +3,21 @@
     xmlns="http://relaxng.org/ns/structure/1.0"
     xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
     datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+	<!-- Début de la grammaire avec une référence au pattern Collection -->
     <start>
         <ref name="Collection"/>
     </start>
+	<!-- Pattern Collection 
+	On a un élément racine collection et on fait référence au pattern Game -->
     <define name="Collection">
         <element name="collection">
             <ref name="Game"/>
         </element>
     </define>
+	<!-- Pattern Game 
+	On peut avoir un ou plusieurs éléments game dans l'élément collection
+	Chaque élément game aura un attribut rank de type integer
+	On fait alors référence à huit patterns différents à l'intérieur de l'élément game -->
     <define name="Game">
         <oneOrMore>
             <element name="game">
@@ -26,27 +33,44 @@
             </element>
         </oneOrMore>
     </define>
+	<!-- Pattern Name 
+	On a un élément name dans l'élément game 
+	On a un élément official de type texte dans l'élément name
+	On a un élément ascii de type texte dans l'élément name -->
     <define name="Name">
         <element name="name">
             <element name="official"><text/></element>
             <element name="ascii"><text/></element>
         </element>
     </define>
+	<!-- Pattern Genre 
+	On a un élément genre de type texte dans l'élément game -->
     <define name="Genre">
         <element name="genre"><text/></element>
     </define>
+	<!-- Pattern Platform 
+	On a un élément platform de type texte dans l'élément game -->
     <define name="Platform">
         <element name="platform"><text/></element>
     </define>
+	<!-- Pattern Production 
+	On a un élément production dans l'élément game 
+	On a un élément publisher de type texte dans l'élément production
+	On a un élément developer de type texte dans l'élément production -->
     <define name="Production">
         <element name="production">
             <element name="publisher"><text/></element>
             <element name="developer"><text/></element>
         </element>
     </define>
+	<!-- Pattern Year
+	On a un élément year de type integer dans l'élément game -->
     <define name="Year">
         <element name="year"><data type="integer"/></element>
     </define>
+	<!-- Pattern Distribution 
+	On peut avoir ou non un élément distribution dans l'élément game
+	Il y a au moins un élément sales de type float avec un attribut area de type texte dans l'élément distribution -->
     <define name="Distribution">
         <optional>
             <element name="distribution">
@@ -59,11 +83,15 @@
             </element>
         </optional>
     </define>
+	<!-- Pattern Critic 
+	On peut avoir ou non un élément critic_score de type float dans l'élément game -->
     <define name="Critic">
         <optional>
             <element name="critic_score"><data type="float"/></element>
         </optional>
     </define>
+	<!-- Pattern Rating 
+	On peut avoir ou non un élément esrb_rating de type texte dans l'élément game -->
     <define name="Rating">
         <optional>
             <element name="esrb_rating"><text/></element>
