@@ -10,11 +10,11 @@ https://www.kaggle.com/ashaheedq/video-games-sales-2019/version/2
 
 ## Gestion du projet
 
-La gestion de notre projet s'est fait sur cette page : https://github.com/users/clemencela/projects/1
+La gestion de notre projet s'est faite sur cette page : https://github.com/users/clemencela/projects/1
 
 ## Description de l'architecture
 
-Ci-dessous la description de chaque répertoire et ce qu'il contient
+Ci-dessous la description de chaque répertoire et ce qu'il contient : 
 
 ### data
 
@@ -67,7 +67,7 @@ transfo_result_google_array.py
 
 ### transformation
 
-Contient la feuille de style XSLT permettant de transformer la page demarche.xml (dans le répertoire "web") en page html bien formatté selon le style du site
+Contient la feuille de style XSLT permettant de transformer la page demarche.xml (dans le répertoire "web") en page html bien formattée selon le style du site
 
 ### web
 
@@ -87,4 +87,4 @@ plus_sales.xml
 
 Dans le répertoire "notes", vous trouverez des informations notées au fur et à mesure de l'avancement du projet...dont les futures statistiques que nous voudrions présenter sur notre site final :smiley:
 
-Le fichier "membres.txt" contient les noms de deux étudiantes composant le groupe de travail.
+Le fichier "membres.txt" contient le nom des deux étudiantes composant le groupe de travail.
