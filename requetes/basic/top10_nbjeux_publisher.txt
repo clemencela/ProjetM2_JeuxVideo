@@ -1,0 +1,5 @@
+(for $publisher in distinct-values(/collection/game/production/publisher)
+let $count := count(/collection/game/production[publisher = $publisher][$publisher!="Unknown"])
+order by $count descending
+return
+<result><publisher>{$publisher}</publisher><count>{$count}</count></result>)[position() = 1 to 10]

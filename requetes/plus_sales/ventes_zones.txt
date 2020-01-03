@@ -1,0 +1,10 @@
+let $salesusa := //distribution/sales[@area="usa"]/text()
+let $totalusa := sum($salesusa)
+
+let $saleseuro := //distribution/sales[@area="europe"]/text()
+let $totaleuro := sum($saleseuro)
+
+let $salesjap := //distribution/sales[@area="japan"]/text()
+let $totaljap := sum($salesjap)
+
+return <result><total_sales_usa>{$totalusa}</total_sales_usa><total_sales_eur>{$totaleuro}</total_sales_eur><total_sales_jap>{$totaljap}</total_sales_jap></result>

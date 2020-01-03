@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Ventes en millions"],
+["Action", 47.26],
+["Action-Adventure", 4.4199999999999955],
+["Adventure", 10.599999999999996],
+["Board Game", 0.01],
+["Fighting", 23.640000000000022],
+["MMO", 0.55],
+["Music", 0.63],
+["Party", 0.42000000000000004],
+["Platform", 18.750000000000004],
+["Puzzle", 9.989999999999997],
+["Racing", 12.639999999999977],
+["Role-Playing", 65.79000000000008],
+["Sandbox", 0.52],
+["Shooter", 23.820000000000064],
+["Simulation", 12.699999999999992],
+["Sports", 37.10000000000006],
+["Strategy", 5.969999999999999],
+["Visual Novel", 0.12000000000000001],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo selon les ventes (en millions) au Japon',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+		
+		
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

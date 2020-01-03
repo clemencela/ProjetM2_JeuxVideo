@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Editeur", "Nombre de jeux"],
+["Sega", 2085],
+["Activision", 1519],
+["Ubisoft", 1518],
+["Electronic Arts", 1497],
+["Konami", 1495],
+["Sony Computer Entertainment", 1354],
+["Nintendo", 1351],
+["Microsoft", 1267],
+["THQ", 1065],
+["Capcom", 964],
+        ]);
+
+        var options = {
+          title: 'Top 10 de la répartition des jeux vidéo par éditeur de jeux',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'}],
+		  pieSliceText: 'percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

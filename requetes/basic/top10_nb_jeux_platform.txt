@@ -1,0 +1,5 @@
+(for $platform in distinct-values(/collection/game/platform)
+let $count := count(/collection/game[platform = $platform])
+order by $count descending
+return
+<result><platform>{$platform}</platform><count>{$count}</count></result>)[position() = 1 to 10]

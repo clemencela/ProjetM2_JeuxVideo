@@ -31,7 +31,7 @@ with open("../data/CSV/vgsales-12-4-2019.csv","r",encoding="utf-8") as table, op
             inter2 = [rank,name,basename,genre,platform,publisher,developer,year,globalsa,usa,euro,jap]
             inter3 = [rank,name,basename,genre,platform,publisher,developer,year,globalsa,usa,euro,jap,critic]
             inter4 = [rank,name,basename,genre,platform,publisher,developer,year,globalsa,usa,euro,jap,esrb]
-			#si tous les champs contiennet une valeur, alors on écrit la ligne dans le bon fichier
+			#si tous les champs contiennent une valeur, alors on écrit la ligne dans le bon fichier
 			#si un des champs est vide, alors on n'écrit pas la ligne dans le fichier qui lui correspond
             if "" not in inter1:
                 fileOut1.writerow(inter1)
@@ -42,3 +42,11 @@ with open("../data/CSV/vgsales-12-4-2019.csv","r",encoding="utf-8") as table, op
             if "" not in inter4:
                 fileOut4.writerow(inter4)
             continue
+    print('CSV file "basic.csv" generated ! \n')
+    print("------------------------------")
+    print('CSV file "plus_sales.csv" generated ! \n')
+    print("------------------------------")
+    print('CSV file "plus_critic_sales.csv" generated ! \n')
+    print("------------------------------")
+    print('CSV file "plus_esrb_sales.csv" generated ! \n')
+    print("------------------------------")

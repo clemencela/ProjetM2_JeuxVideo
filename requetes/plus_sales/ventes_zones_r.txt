@@ -1,0 +1,5 @@
+<result>
+  <total_sales_usa>1340.2399999999805</total_sales_usa>
+  <total_sales_eur>1007.5899999999891</total_sales_eur>
+  <total_sales_jap>287.8799999999969</total_sales_jap>
+</result>

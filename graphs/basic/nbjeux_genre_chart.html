@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Nombre de jeux"],
+["Action", 7461],
+["Sports", 5211],
+["Adventure", 5158],
+["Shooter", 4498],
+["Role-Playing", 4462],
+["Platform", 3380],
+["Strategy", 3214],
+["Puzzle", 3111],
+["Racing", 2998],
+["Simulation", 2693],
+["Fighting", 2052],
+["Action-Adventure", 557],
+["Visual Novel", 246],
+["Music", 193],
+["MMO", 72],
+["Party", 69],
+["Board Game", 15],
+["Sandbox", 9],
+["Education", 9],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo par genre',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<result>
+  <genre>Action</genre>
+  <total>209.42000000000004</total>
+</result>
+<result>
+  <genre>Action-Adventure</genre>
+  <total>41.51999999999999</total>
+</result>
+<result>
+  <genre>Adventure</genre>
+  <total>32.130000000000024</total>
+</result>
+<result>
+  <genre>Board Game</genre>
+  <total>0.22</total>
+</result>
+<result>
+  <genre>Fighting</genre>
+  <total>42.970000000000006</total>
+</result>
+<result>
+  <genre>MMO</genre>
+  <total>0.44</total>
+</result>
+<result>
+  <genre>Music</genre>
+  <total>1.03</total>
+</result>
+<result>
+  <genre>Party</genre>
+  <total>0.55</total>
+</result>
+<result>
+  <genre>Platform</genre>
+  <total>50.900000000000034</total>
+</result>
+<result>
+  <genre>Puzzle</genre>
+  <total>5.969999999999996</total>
+</result>
+<result>
+  <genre>Racing</genre>
+  <total>92.50999999999999</total>
+</result>
+<result>
+  <genre>Role-Playing</genre>
+  <total>70.13000000000011</total>
+</result>
+<result>
+  <genre>Sandbox</genre>
+  <total>0.56</total>
+</result>
+<result>
+  <genre>Shooter</genre>
+  <total>222.29000000000002</total>
+</result>
+<result>
+  <genre>Simulation</genre>
+  <total>23.780000000000005</total>
+</result>
+<result>
+  <genre>Sports</genre>
+  <total>175.79999999999998</total>
+</result>
+<result>
+  <genre>Strategy</genre>
+  <total>6.229999999999998</total>
+</result>
+<result>
+  <genre>Visual Novel</genre>
+  <total>0.04</total>
+</result>

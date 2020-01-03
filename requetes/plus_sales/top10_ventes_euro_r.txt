@@ -1,0 +1,50 @@
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>PS3</platform>
+  <sales>9.85</sales>
+</result>
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>PS4</platform>
+  <sales>9.71</sales>
+</result>
+<result>
+  <name>FIFA 18</name>
+  <platform>PS4</platform>
+  <sales>8.64</sales>
+</result>
+<result>
+  <name>FIFA 17</name>
+  <platform>PS4</platform>
+  <sales>7.95</sales>
+</result>
+<result>
+  <name>FIFA 19</name>
+  <platform>PS4</platform>
+  <sales>6.87</sales>
+</result>
+<result>
+  <name>Red Dead Redemption 2</name>
+  <platform>PS4</platform>
+  <sales>6.21</sales>
+</result>
+<result>
+  <name>Call of Duty: WWII</name>
+  <platform>PS4</platform>
+  <sales>6.21</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops 3</name>
+  <platform>PS4</platform>
+  <sales>6.05</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops II</name>
+  <platform>PS3</platform>
+  <sales>5.88</sales>
+</result>
+<result>
+  <name>Call of Duty: Modern Warfare 3</name>
+  <platform>PS3</platform>
+  <sales>5.78</sales>
+</result>

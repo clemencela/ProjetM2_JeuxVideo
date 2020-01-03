@@ -1,0 +1,20 @@
+<result>
+  <esrb>T</esrb>
+  <count>821</count>
+</result>
+<result>
+  <esrb>E</esrb>
+  <count>630</count>
+</result>
+<result>
+  <esrb>M</esrb>
+  <count>595</count>
+</result>
+<result>
+  <esrb>E10</esrb>
+  <count>237</count>
+</result>
+<result>
+  <esrb>RP</esrb>
+  <count>3</count>
+</result>

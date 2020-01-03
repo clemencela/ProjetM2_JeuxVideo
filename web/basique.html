@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Basique</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart','bar']});
+      google.charts.setOnLoadCallback(drawChart);
+	  google.charts.setOnLoadCallback(drawChart2);
+	  google.charts.setOnLoadCallback(drawChart3);
+	  google.charts.setOnLoadCallback(drawChart4);
+	  google.charts.setOnLoadCallback(drawChart5);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+		["Année", "Nombre de jeux"],
+["2006", 2111],
+["1985", 93],
+["2008", 2974],
+["2017", 1486],
+["2009", 4506],
+["1998", 1094],
+["1989", 436],
+["2010", 3661],
+["2007", 2572],
+["2005", 1821],
+["2000", 1561],
+["1991", 786],
+["2013", 1723],
+["2014", 2904],
+["2004", 1610],
+["2011", 3488],
+["1990", 666],
+["2003", 1738],
+["2002", 1736],
+["2016", 1238],
+["2015", 1633],
+["2001", 1492],
+["1999", 1284],
+["2018", 1482],
+["2012", 1559],
+["1996", 1220],
+["1992", 935],
+["1993", 1043],
+["1997", 1030],
+["1994", 1163],
+["1982", 214],
+["1988", 282],
+["1987", 259],
+["1995", 1162],
+["1981", 37],
+["1986", 146],
+["1978", 48],
+["1983", 300],
+["2020", 331],
+["1984", 88],
+["1977", 12],
+["2019", 729],
+["1980", 35],
+["1970", 104],
+["1979", 5],
+["1975", 1],
+["1973", 1],
+        ]);
+		
+		data.sort([{column: 0}]);
+
+        var options = {
+          title: 'Nombre de jeux vidéo par année',
+          legend: { position: 'bottom' },
+		  animation: {duration: 1000, startup: true, easing: 'inAndOut'},
+		  colors:['#ff3399']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+	  
+	  
+      function drawChart2() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Nombre de jeux"],
+["Action", 7461],
+["Sports", 5211],
+["Adventure", 5158],
+["Shooter", 4498],
+["Role-Playing", 4462],
+["Platform", 3380],
+["Strategy", 3214],
+["Puzzle", 3111],
+["Racing", 2998],
+["Simulation", 2693],
+["Fighting", 2052],
+["Action-Adventure", 557],
+["Visual Novel", 246],
+["Music", 193],
+["MMO", 72],
+["Party", 69],
+["Board Game", 15],
+["Sandbox", 9],
+["Education", 9],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo par genre',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart3() {
+        var data = google.visualization.arrayToDataTable([
+		["Décennies", "Action", "Action-Adventure", "Adventure", "Board Game", "Education", "Fighting", "MMO", "Music", "Party", "Platform", "Puzzle", "Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", "Sports", "Strategy", "Visual Novel"],
+["1990-1999", 1122, 9, 786, 0, 4, 628, 0, 0, 0, 1116, 584, 607, 851, 0, 915, 503, 1326, 784, 3],
+["2000-2009", 2713, 32, 2386, 0, 2, 787, 7, 6, 13, 1184, 1359, 1587, 1702, 2, 1906, 1276, 2554, 1482, 7],
+["2010-2019", 3035, 508, 1808, 15, 3, 604, 65, 186, 56, 884, 1056, 717, 1730, 7, 1358, 852, 1133, 875, 235],
+        ]);
+
+        var options = {
+          chart: {title: 'Répartition des genres de jeux vidéo par décennies'},
+		  legend : {position: 'none'},
+		  bar: {groupWidth: '80%'}
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+	  
+	  function drawChart4() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Plateforme", "Nombre de jeux"],
+["PC", 10572],
+["PS2", 3560],
+["DS", 3263],
+["PS", 2702],
+["XBL", 2099],
+["PSN", 1981],
+["PS3", 1846],
+["PSP", 1793],
+["X360", 1685],
+["GBA", 1657],
+		  
+        ]);
+
+        var options = {
+          title: 'Top 10 de la répartition des jeux vidéo par plateforme',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'}],
+		  pieSliceText: 'percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart5() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Editeur", "Nombre de jeux"],
+["Sega", 2085],
+["Activision", 1519],
+["Ubisoft", 1518],
+["Electronic Arts", 1497],
+["Konami", 1495],
+["Sony Computer Entertainment", 1354],
+["Nintendo", 1351],
+["Microsoft", 1267],
+["THQ", 1065],
+["Capcom", 964],
+        ]);
+
+        var options = {
+          title: 'Top 10 de la répartition des jeux vidéo par éditeur de jeux',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'}],
+		  pieSliceText: 'percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">Les jeux vidéo en chiffres</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li><a href="index.html">Accueil</a></li>
+												<li><a href="demarche.xml">Démarche</a></li>
+												<li class="current_page_item">
+													<a href="#">Résultats</a>
+													<ul>
+														<li><a href="basique.html">Basique</a></li>
+														<li><a href="ventes.html">Ventes</a></li>
+														<li><a href="critique.html">Critique et ventes</a></li>
+														<li><a href="esrb.html">ESRB et ventes</a></li>
+													</ul>
+												</li>
+												<li><a href="remarques.html">Remarques</a></li>
+												
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header class="major">
+												<h2>Basique</h2>
+												<p align="justify">Présentation des résultats des requêtes XQuery sur le fichier "basic.xml"</p>
+											</header>
+											<p align="justify">Vous trouverez sur cette page une présentation des différents résultats obtenus grâce à nos requêtes XQuery appliquées au fichier XML "basic". Via ces requêtes, nous avons voulu explorer nos données et nous rendre compte de quoi celles-ci étaient composées. Ainsi, ces résultats peuvent nous fournir une présentation générale de nos données.</p>
+											
+											<h3>Répartition des jeux vidéo par année</h3>
+											<div align="center"><div id="curve_chart" style="width: 900px; height: 500px"></div></div>
+											<p align="justify">Cette courbe nous montre le nombre de jeux vidéo dans nos données selon leur année de sortie. Nous pouvons voir que notre jeu de données contient essentiellement des jeux vidéo sortis à partir des années 1990 et contient davantage de jeux sortis à partir de 2000. Nous constatons que nos données ne nous fournissent guère de jeux vidéo pour les décennies de 1970 à 1990. Le site duquel sont issues les données n'a sûrement pas pu récolter assez d'informations concernant d'anciens jeux. De plus, l'écart entre le nombre de jeux dans les années 2000 et le nombre de jeux avant cette période nous montre peut-être une certaine réalité du monde des jeux vidéo : une production massive de jeux vidéo destinés à un public de plus en plus large.</p>
+											
+											<h3>Répartition des jeux vidéo par genre</h3>
+											<div align="center"><div id="piechart" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous montre les genres de jeux vidéo représentés dans notre jeu de données. Nous pouvons voir que les jeux d'action, de sport, d'aventure, de tir et de rôle sont les genres les plus représentés ici. Par ailleurs, ce sont des genres plutôt populaires auprès des joueurs. De plus, en analysant ces données, nous voyons bien qu'il n'y a pas un genre beaucoup plus représenté que les autres. Les genres de jeux vidéo sont assez bien répartis et reflètent une certaine proportion que nous connaissons dans l'offre actuelle.</p>
+											
+											<h3>Répartition des genres de jeux vidéo par décennies</h3>
+											<div align="center"><div id="columnchart_material" style="width: 800px; height: 500px;"></div></div>
+											<p align="justify">Après avoir analysé la courbe des jeux vidéo classés par année de sortie, nous avons voulu nous intéresser aux jeux vidéo de 1990 à nos jours. En effet, il s'agit des données les plus représentées dans notre jeu de données. Nous avons donc comparé les années 1990, 2000 et 2010 afin de pouvoir étudier les différents genres les plus représentés selon les périodes. Tout d'abord, nous voyons que les genres les moins présents dans une décennie, ne sont pas non plus très représentés dans les autres. Il s'agit par exemple des genres "action-aventure", "fête", "jeu de plateau", "jeu en ligne massivement multijoueur (MMO), "musique" ou encore "jeu bac à sable". Le genre qui se démarque pour chaque décennie est le genre "action", qui est suivi de près par le genre "aventure". Ce graphique nous confirme la répartition présentée dans le graphique précédent présentant la répartition des jeux vidéo selon leur genre. En effet, nous pouvons voir que la période 2000-2009 est plus fournie que les deux autres périodes présentées.</p>
+											
+											<h3>Répartition des jeux vidéo par plateforme</h3>
+											<div align="center"><div id="piechart2" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous montre la répartition des jeux vidéo par plateforme sous la forme d'un top 10 car il y a beaucoup trop de noms différents de plateforme dans notre jeu de données. Réaliser un top 10 permet alors de se rendre compte des plateformes les plus représentées, sans prêter trop d'attention aux valeurs rares. Nous constatons alors qu'une grosse proportion des jeux vidéo de nos données sont des jeux PC. Les plateformes les plus populaires ensuite sont des consoles de salon ou portables des marques Sony (PS2, PS, PSN, PS3, PSP), Nintendo (DS, GBA) ou Microsoft (XBL, X360).</p>
+											
+											<h3>Répartition des jeux vidéo par éditeur de jeux</h3>
+											<div align="center"><div id="piechart3" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous montre la répartition des jeux vidéo par éditeur de jeux sous la forme d'un top 10 encore une fois (car les noms d'éditeurs de jeux sont eux aussi en très grands nombres). Nous pouvons alors voir les éditeurs de jeux les plus représentés dans notre jeu de données. Il s'agit des plus grands éditeurs de jeux vidéo, toujours très actifs dans l'édition, tels que Sega, Ubisoft, Electronic Arts ou encore Nintendo.</p>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Les jeux vidéos en chiffres. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

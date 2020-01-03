@@ -4,8 +4,7 @@ import csv
 from lxml import etree
 
 def basic(row):
-	"""Prend en entrée une ligne de CSV sous forme de liste et crée les différents éléments
-	de la modélisation XML pour les informations basiques"""
+    """Prend en entrée une ligne de CSV sous forme de liste et crée les différents éléments de la modélisation XML pour les informations basiques"""
 	
 	#on  définit la variable game comme global pour qu'elle soit
 	#accessible par les autres fonctions
@@ -48,8 +47,7 @@ def basic(row):
     year.text = row[7]
     
 def sales(row):
-	"""Prend en entrée une ligne de CSV sous forme de liste et crée les différents éléments
-	de la modélisation XML pour les informations de ventes"""
+    """Prend en entrée une ligne de CSV sous forme de liste et crée les différents éléments de la modélisation XML pour les informations de ventes"""
 	
 	#élément distribution inclus dans game
     distribution = etree.SubElement(game,"distribution")
@@ -79,8 +77,8 @@ def sales(row):
     sales4.text = row[11]
     
 def critic(row):
-	"""Prend en entrée une ligne de CSV sous forme de liste et crée l'élément
-	de la modélisation XML pour la note du jeu obtenue par la critique"""
+    """Prend en entrée une ligne de CSV sous forme de liste et crée l'élément
+	de la modélisation XML pour la note du jeu obtenue de la critique"""
 	
 	#élément critic_score inclus dans game
 	#valeur du champ "Critic_Score"
@@ -88,7 +86,7 @@ def critic(row):
     critic.text = row[12]
 
 def esrb(row):
-	"""Prend en entrée une ligne de CSV sous forme de liste et crée l'élément
+    """Prend en entrée une ligne de CSV sous forme de liste et crée l'élément
 	de la modélisation XML pour le symbole ESRB du jeu"""
 	
 	#élément esrb_rating inclus dans game
@@ -159,7 +157,7 @@ for child in directory.iterdir():
 			#on fait des tests pour savoir quel jeu de données on a
 			#on récupère l'arbre XML que les fonctions ont agrandi au fur et à mesure
 			#et on l'écrit dans le fichier correspondant
-			#en ajoutant une déclaration XML ainsi qu'une indention
+			#en ajoutant une déclaration XML ainsi qu'une indentation
             if nameF == "B":
                 tree = etree.ElementTree(root)
                 tree.write(str(pathToF), encoding="utf-8",xml_declaration=True, method="xml",pretty_print=True)

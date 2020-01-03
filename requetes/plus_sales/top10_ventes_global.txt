@@ -1,0 +1,8 @@
+(for $game in /collection/game
+let $name := $game/name/official[text()]
+let $plt := $game/platform/text()
+let $sales := $game/distribution/sales[@area="global"]
+group by $name, $sales
+order by xs:decimal($sales) descending
+return
+<result><name>{$name}</name><platform>{$plt}</platform><sales>{$sales}</sales></result>)[position() = 1 to 10]

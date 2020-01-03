@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+		["Décennies", "Action", "Action-Adventure", "Adventure", "Board Game", "Education", "Fighting", "MMO", "Music", "Party", "Platform", "Puzzle", "Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", "Sports", "Strategy", "Visual Novel"],
+["1990-1999", 1122, 9, 786, 0, 4, 628, 0, 0, 0, 1116, 584, 607, 851, 0, 915, 503, 1326, 784, 3],
+["2000-2009", 2713, 32, 2386, 0, 2, 787, 7, 6, 13, 1184, 1359, 1587, 1702, 2, 1906, 1276, 2554, 1482, 7],
+["2010-2019", 3035, 508, 1808, 15, 3, 604, 65, 186, 56, 884, 1056, 717, 1730, 7, 1358, 852, 1133, 875, 235],
+        ]);
+
+        var options = {
+          chart: {title: 'Répartition des genres de jeux vidéo par décennies'},
+		  legend : {position: 'none'},
+		  bar: {groupWidth: '80%'}
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
+
+

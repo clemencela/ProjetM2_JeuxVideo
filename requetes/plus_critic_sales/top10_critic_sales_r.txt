@@ -1,0 +1,80 @@
+<result>
+  <name>Grand Theft Auto IV</name>
+  <platform>X360</platform>
+  <salesglob>11.09</salesglob>
+  <salesusa>6.8</salesusa>
+  <saleseuro>3.11</saleseuro>
+  <salesjap>0.14</salesjap>
+</result>
+<result>
+  <name>Grand Theft Auto IV</name>
+  <platform>PS3</platform>
+  <salesglob>10.57</salesglob>
+  <salesusa>4.79</salesusa>
+  <saleseuro>3.73</saleseuro>
+  <salesjap>0.44</salesjap>
+</result>
+<result>
+  <name>Dragon Quest XI: Echoes of an Elusive Age</name>
+  <platform>PS4</platform>
+  <salesglob>2.04</salesglob>
+  <salesusa>0.29</salesusa>
+  <saleseuro>0.22</saleseuro>
+  <salesjap>1.43</salesjap>
+</result>
+<result>
+  <name>Red Dead Redemption: Undead Nightmare</name>
+  <platform>PS3</platform>
+  <salesglob>1.18</salesglob>
+  <salesusa>0.47</salesusa>
+  <saleseuro>0.45</saleseuro>
+  <salesjap>0.06</salesjap>
+</result>
+<result>
+  <name>Red Dead Redemption: Undead Nightmare</name>
+  <platform>X360</platform>
+  <salesglob>1.11</salesglob>
+  <salesusa>0.61</salesusa>
+  <saleseuro>0.38</saleseuro>
+  <salesjap>0.02</salesjap>
+</result>
+<result>
+  <name>Red Dead Redemption 2</name>
+  <platform>PS4</platform>
+  <salesglob>13.94</salesglob>
+  <salesusa>5.26</salesusa>
+  <saleseuro>6.21</saleseuro>
+  <salesjap>0.21</salesjap>
+</result>
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>PS4</platform>
+  <salesglob>19.39</salesglob>
+  <salesusa>6.06</salesusa>
+  <saleseuro>9.71</saleseuro>
+  <salesjap>0.6</salesjap>
+</result>
+<result>
+  <name>God of War (2018)</name>
+  <platform>PS4</platform>
+  <salesglob>6.15</salesglob>
+  <salesusa>2.83</salesusa>
+  <saleseuro>2.17</saleseuro>
+  <salesjap>0.13</salesjap>
+</result>
+<result>
+  <name>The Orange Box</name>
+  <platform>X360</platform>
+  <salesglob>1.82</salesglob>
+  <salesusa>1.09</salesusa>
+  <saleseuro>0.53</saleseuro>
+  <salesjap>0.02</salesjap>
+</result>
+<result>
+  <name>Grand Theft Auto: Vice City</name>
+  <platform>PS2</platform>
+  <salesglob>16.15</salesglob>
+  <salesusa>8.41</salesusa>
+  <saleseuro>5.49</saleseuro>
+  <salesjap>0.47</salesjap>
+</result>

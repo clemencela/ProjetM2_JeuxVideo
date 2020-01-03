@@ -1,0 +1,4 @@
+for $game in /collection/game
+group by $y := $game/year
+order by $y
+return <result><year>{$y}</year><total>{sum($game/distribution/sales[@area="global"]/text())}</total></result>

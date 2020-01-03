@@ -1,0 +1,8 @@
+for $esrb in distinct-values(/collection/game/esrb_rating)
+for $game in /collection/game
+where /$game/esrb_rating = $esrb
+let $salesjap := /collection/$game/distribution/sales[@area="japan"]/text()
+group by $esrb
+let $totaljap := sum($salesjap)
+return
+<result><esrb>{$esrb}</esrb><sales>{$totaljap}</sales></result>

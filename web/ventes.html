@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ventes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart', 'table']});
+      google.charts.setOnLoadCallback(drawChart);
+	  google.charts.setOnLoadCallback(drawChart2);
+	  google.charts.setOnLoadCallback(drawChart3);
+	  google.charts.setOnLoadCallback(drawChart4);
+	  google.charts.setOnLoadCallback(drawTable);
+	  google.charts.setOnLoadCallback(drawTable2);
+	  google.charts.setOnLoadCallback(drawTable3);
+	  google.charts.setOnLoadCallback(drawTable4);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+		["Année de sortie", "Ventes (en millions)"],
+["1985", 0.82],
+["1986", 3.2800000000000002],
+["1987", 2.04],
+["1988", 1.8900000000000001],
+["1989", 4.17],
+["1990", 7.199999999999999],
+["1991", 0.63],
+["1992", 3.55],
+["1993", 3.6999999999999997],
+["1994", 8.11],
+["1995", 12.620000000000001],
+["1996", 27.150000000000002],
+["1997", 47.420000000000016],
+["1998", 60.970000000000006],
+["1999", 50.400000000000006],
+["2000", 71.19999999999996],
+["2001", 101.13999999999997],
+["2002", 105.99999999999997],
+["2003", 90.77999999999996],
+["2004", 72.87],
+["2005", 94.22000000000007],
+["2006", 97.61000000000001],
+["2007", 174.40000000000003],
+["2008", 221.45999999999995],
+["2009", 225.93000000000012],
+["2010", 228.00999999999988],
+["2011", 240.85000000000005],
+["2012", 176.60999999999996],
+["2013", 185.27000000000004],
+["2014", 183.01999999999998],
+["2015", 146.85999999999999],
+["2016", 114.84000000000007],
+["2017", 116.38000000000001],
+["2018", 99.89999999999992],
+["2020", 0.16],
+        ]);
+		
+		data.sort([{column: 0}]);
+
+        var options = {
+          title: 'Ventes (en millions) de jeux vidéo dans le monde par année de sortie',
+          legend: { position: 'bottom' },
+		  animation: {duration: 1000, startup: true, easing: 'inAndOut'},
+		  colors:['#ff3399']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+	  
+	  var myMapsApiKey = 'AIzaSyDXG5CIVvs9n6GCi4kph3MXGngC8nxxcA0';
+      google.charts.load('current', {
+        'packages':['geochart'], mapsApiKey: myMapsApiKey 
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+		["Pays", "Ventes (en millions)", "Continent"],
+["United States", 1340.2399999999805, "Amérique du Nord"],
+["Canada", 1340.2399999999805, "Amérique du Nord"],
+["Mexico", 1340.2399999999805, "Amérique du Nord"],
+["France", 1007.5899999999891, "Europe"],
+["Germany", 1007.5899999999891, "Europe"],
+["Spain", 1007.5899999999891, "Europe"],
+["Portugal", 1007.5899999999891, "Europe"],
+["Italy", 1007.5899999999891, "Europe"],
+["United Kingdom", 1007.5899999999891, "Europe"],
+["Ireland", 1007.5899999999891, "Europe"],
+["Poland", 1007.5899999999891, "Europe"],
+["Russia", 1007.5899999999891, "Europe"],
+["Ukraine", 1007.5899999999891, "Europe"],
+["Sweden", 1007.5899999999891, "Europe"],
+["Norway", 1007.5899999999891, "Europe"],
+["Finland", 1007.5899999999891, "Europe"],
+["Romania", 1007.5899999999891, "Europe"],
+["Belarus", 1007.5899999999891, "Europe"],
+["Kazakhstan", 1007.5899999999891, "Europe"],
+["Greece", 1007.5899999999891, "Europe"],
+["Bulgaria", 1007.5899999999891, "Europe"],
+["Iceland", 1007.5899999999891, "Europe"],
+["Hungary", 1007.5899999999891, "Europe"],
+["Austria", 1007.5899999999891, "Europe"],
+["Czech Republic", 1007.5899999999891, "Europe"],
+["Serbia", 1007.5899999999891, "Europe"],
+["Lithuania", 1007.5899999999891, "Europe"],
+["Latvia", 1007.5899999999891, "Europe"],
+["Croatia", 1007.5899999999891, "Europe"],
+["Bosnia and Herzegovina", 1007.5899999999891, "Europe"],
+["Slovakia", 1007.5899999999891, "Europe"],
+["Estonia", 1007.5899999999891, "Europe"],
+["Denmark", 1007.5899999999891, "Europe"],
+["Switzerland", 1007.5899999999891, "Europe"],
+["Netherlands", 1007.5899999999891, "Europe"],
+["Moldova", 1007.5899999999891, "Europe"],
+["Belgium", 1007.5899999999891, "Europe"],
+["Armenia", 1007.5899999999891, "Europe"],
+["Albania", 1007.5899999999891, "Europe"],
+["North Macedonia", 1007.5899999999891, "Europe"],
+["Turkey", 1007.5899999999891, "Europe"],
+["Slovenia", 1007.5899999999891, "Europe"],
+["Montenegro", 1007.5899999999891, "Europe"],
+["Kosovo", 1007.5899999999891, "Europe"],
+["Cyprus", 1007.5899999999891, "Europe"],
+["Azerbaijan", 1007.5899999999891, "Europe"],
+["Luxembourg", 1007.5899999999891, "Europe"],
+["Georgia", 1007.5899999999891, "Europe"],
+["Andorra", 1007.5899999999891, "Europe"],
+["Malta", 1007.5899999999891, "Europe"],
+["Liechtenstein", 1007.5899999999891, "Europe"],
+["San Marino", 1007.5899999999891, "Europe"],
+["Monaco", 1007.5899999999891, "Europe"],
+["Vatican City", 1007.5899999999891, "Europe"],
+["Japan", 287.8799999999969, "Japon"],
+        ]);
+
+        var options = {displayMode:'regions',
+		region:'world',
+		resolution:'countries',
+		colorAxis: {colors: ['#993366','#ff3385','#ff9933']},
+        backgroundColor: '#ccf2ff',
+        datalessRegionColor: '#f2e6d9',
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+		
+		// defines the data for the tooltip
+        var formatter = new google.visualization.PatternFormat('{0}');
+        formatter.format( data, [1], 1 );
+        var formatter = new google.visualization.PatternFormat('{2}');
+        formatter.format( data, [0,1,2], 0 );
+
+        // defines the data for the chart values
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1]);
+		
+		
+
+        chart.draw(view, options);
+      }
+	  
+	  function drawChart2() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Ventes en millions"],
+["Action", 277.2999999999998],
+["Action-Adventure", 38.370000000000005],
+["Adventure", 40.050000000000026],
+["Board Game", 0.06],
+["Fighting", 77.87999999999997],
+["MMO", 0.87],
+["Music", 3.2],
+["Party", 0.54],
+["Platform", 82.79000000000003],
+["Puzzle", 17.259999999999994],
+["Racing", 90.80999999999995],
+["Role-Playing", 122.77999999999996],
+["Sandbox", 0.69],
+["Shooter", 332.7400000000008],
+["Simulation", 38.33000000000002],
+["Sports", 149.63000000000014],
+["Strategy", 13.910000000000002],
+["Visual Novel", 0.15000000000000002],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo selon les ventes (en millions) en Amérique du Nord',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+		
+		
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+	  
+	   function drawChart3() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Ventes en millions"],
+["Action", 209.42000000000004],
+["Action-Adventure", 41.51999999999999],
+["Adventure", 32.130000000000024],
+["Board Game", 0.22],
+["Fighting", 42.970000000000006],
+["MMO", 0.44],
+["Music", 1.03],
+["Party", 0.55],
+["Platform", 50.900000000000034],
+["Puzzle", 5.969999999999996],
+["Racing", 92.50999999999999],
+["Role-Playing", 70.13000000000011],
+["Sandbox", 0.56],
+["Shooter", 222.29000000000002],
+["Simulation", 23.780000000000005],
+["Sports", 175.79999999999998],
+["Strategy", 6.229999999999998],
+["Visual Novel", 0.04],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo selon les ventes (en millions) en Europe',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+		
+		
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart4() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Ventes en millions"],
+["Action", 47.26],
+["Action-Adventure", 4.4199999999999955],
+["Adventure", 10.599999999999996],
+["Board Game", 0.01],
+["Fighting", 23.640000000000022],
+["MMO", 0.55],
+["Music", 0.63],
+["Party", 0.42000000000000004],
+["Platform", 18.750000000000004],
+["Puzzle", 9.989999999999997],
+["Racing", 12.639999999999977],
+["Role-Playing", 65.79000000000008],
+["Sandbox", 0.52],
+["Shooter", 23.820000000000064],
+["Simulation", 12.699999999999992],
+["Sports", 37.10000000000006],
+["Strategy", 5.969999999999999],
+["Visual Novel", 0.12000000000000001],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo selon les ventes (en millions) au Japon',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+		
+		
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data, options);
+      }
+	  
+	   function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('number', 'Ventes mondiales (en millions)');
+        data.addRows([
+		["Grand Theft Auto V (PS3)", 20.32],
+["Grand Theft Auto V (PS4)", 19.39],
+["Grand Theft Auto: Vice City (PS2)", 16.15],
+["Grand Theft Auto V (X360)", 15.86],
+["Call of Duty: Black Ops 3 (PS4)", 15.09],
+["Call of Duty: Modern Warfare 3 (X360)", 14.82],
+["Call of Duty: Black Ops (X360)", 14.74],
+["Red Dead Redemption 2 (PS4)", 13.94],
+["Call of Duty: Black Ops II (X360)", 13.86],
+["Call of Duty: Black Ops II (PS3)", 13.8],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawTable2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('number', 'Ventes américaines (en millions)');
+        data.addRows([
+		["Call of Duty: Black Ops (X360)", 9.76],
+["Call of Duty: Modern Warfare 3 (X360)", 9.07],
+["Grand Theft Auto V (X360)", 9.06],
+["Call of Duty: Modern Warfare 2 (X360)", 8.54],
+["Grand Theft Auto: Vice City (PS2)", 8.41],
+["Call of Duty: Black Ops II (X360)", 8.27],
+["Halo: Reach (X360)", 7.08],
+["Grand Theft Auto III (PS2)", 6.99],
+["Grand Theft Auto IV (X360)", 6.8],
+["Call of Duty: Ghosts (X360)", 6.76],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div2'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawTable3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('number', 'Ventes européennes (en millions)');
+        data.addRows([
+		["Grand Theft Auto V (PS3)", 9.85],
+["Grand Theft Auto V (PS4)", 9.71],
+["FIFA 18 (PS4)", 8.64],
+["FIFA 17 (PS4)", 7.95],
+["FIFA 19 (PS4)", 6.87],
+["Red Dead Redemption 2 (PS4)", 6.21],
+["Call of Duty: WWII (PS4)", 6.21],
+["Call of Duty: Black Ops 3 (PS4)", 6.05],
+["Call of Duty: Black Ops II (PS3)", 5.88],
+["Call of Duty: Modern Warfare 3 (PS3)", 5.78],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div3'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawTable4() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('number', 'Ventes japonaises (en millions)');
+        data.addRows([
+		["Yokai Watch 2: Psychic Specters (3DS)", 2.69],
+["Monster Hunter: World (PS4)", 2.17],
+["Hot Shots Golf (PSPS)", 2.13],
+["Final Fantasy XIII (PS3)", 1.87],
+["Hot Shots Golf 2 (PS)", 1.48],
+["PaRappa The Rapper (PS)", 1.46],
+["Dragon Quest XI: Echoes of an Elusive Age (PS4)", 1.43],
+["Crash Bandicoot 3: Warped (PS)", 1.42],
+["Hot Shots Golf 3 (PS2)", 1.38],
+["Tekken 2 (PS)", 1.36],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div4'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	</script>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">Les jeux vidéo en chiffres</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li><a href="index.html">Accueil</a></li>
+												<li><a href="demarche.xml">Démarche</a></li>
+												<li class="current_page_item">
+													<a href="#">Résultats</a>
+													<ul>
+														<li><a href="basique.html">Basique</a></li>
+														<li><a href="ventes.html">Ventes</a></li>
+														<li><a href="critique.html">Critique et ventes</a></li>
+														<li><a href="esrb.html">ESRB et ventes</a></li>
+													</ul>
+												</li>
+												<li><a href="remarques.html">Remarques</a></li>
+												
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header class="major">
+												<h2>Ventes</h2>
+												<p align="justify">Présentation des résultats des requêtes XQuery sur le fichier "plus_sales.xml"</p>
+											</header>
+											<p align="justify">Vous trouverez sur cette page une présentation des différents résultats obtenus grâce à nos requêtes XQuery appliquées au fichier XML "plus_sales". Nous avons voulu, grâce à ces requêtes, obtenir des résultats concernant les ventes de jeux vidéo en fonction de différents critères.</p>
+											
+											<h3>Répartition des ventes de jeux vidéo par année</h3>
+											<div align="center"><div id="curve_chart" style="width: 900px; height: 500px"></div></div>
+											<p align="justify">Cette courbe nous montre les ventes mondiales (en millions) de jeux vidéo selon leur année de sortie. Nous constatons que cette courbe ressemble beaucoup à celle du nombre de jeux vidéo par année de sortie présentée sur la page "Basique". Ainsi, nous pouvons voir que les années de sortie les plus fournies en jeux vidéo dans notre jeu de données sont également celles où il y a eu le plus de ventes au niveau mondial. Ces informations de ventes nous paraissent donc logiques dans la mesure où plus une année de sortie est représentée, plus celle-ci présentera de ventes. Ce sont donc les décennies 2000 et 2010 qui présentent le plus de ventes mondiales d'après nos données. A noter que nous n'avons aucune donnée chiffrée pour les années 1970, décennie qui figurait sur la courbe précédente.</p>
+											
+											<h3>Répartition des ventes de jeux vidéo par zone géographique</h3>
+											<div align="center"><div id="regions_div" style="width: 900px; height: 500px;"></div></div>
+											<p></p>
+											<p align="justify">Cette carte nous montre les ventes (en millions) de jeux vidéo par zone géographique : Amérique du Nord, Europe et Japon. L'Amérique du Nord est le plus gros consommateur de jeux, devant l'Europe puis le Japon. Il est bon de noter que notre jeu de données dresse une comparaison entre deux continents et un pays, ce qui a pour conséquence de mettre le Japon à la troisième place de ce classement. En proportion, nous pouvons voir que ce pays présente énormément de ventes. En effet, le Japon a un total de ventes de jeux vidéo qui correspond à plus de 25% du total des ventes de l'Europe. Par ailleurs, nos données ne nous présentent que des informations concernant des pays de l'hémisphère Nord, nous n'avons pas de données pour les pays d'Amérique latine ou d'Afrique par exemple.</p>
+											
+											<h3>Répartition des ventes de jeux vidéo par genre et par zone géographique</h3>
+											<div align="center"><div id="piechart" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous présente les ventes (en millions) de jeux vidéo par genre en Amérique du Nord. Les jeux les plus vendus dans cette zone sont principalement des jeux de tir et d'action. Puis viennent ensuite les jeux de sport, de rôle, de course, de plateforme et de combat qui représentent encore une part non négligeable des ventes. Enfin, les jeux d'aventure ou de simulation par exemple connaissent peu de succès en Amérique du Nord.</p>
+											
+											<div align="center"><div id="piechart2" style="width: 900px; height: 500px;"></div></div>
+											<p></p>
+											<p align="justify">Ce graphique nous présente les ventes (en millions) de jeux vidéo par genre en Europe. Les jeux les plus vendus dans cette zone sont encore une fois des jeux de tir, d'action et également de sport. Viennent ensuite les jeux de course, de rôle et de plateforme qui représentent encore une certaine proportion des ventes européennes. Les jeux d'aventure ou de simulation connaissent encore une fois peu de succès.</p>
+											
+											<div align="center"><div id="piechart3" style="width: 900px; height: 500px;"></div></div>
+											<p></p>
+											<p align="justify">Ce troisième graphique nous présente les ventes (en millions) de jeux vidéo par genre au Japon. Les jeux les plus vendus dans ce pays sont des jeux de rôle, d'action ou de sport. Viennent ensuite les jeux de tir, de combat et de plateforme qui constituent entre eux une part importante des ventes japonaises.</p>
+											<p align="justify">En analysant ces trois graphiques, nous pouvons constater des différences et similarités de consommation entre les différentes zones géographiques. En effet, nous pouvons voir que l'Amérique du Nord et l'Europe présentent une consommation de jeux vidéo assez similaire dans la répartition entre les différents genres, avec des ventes de jeux de tir et d'action représentant plus de 20% des ventes dans les deux zones. Quant au Japon, les ventes de jeux de tir ne représentent qu'environ 8% des ventes de jeux du pays, qui connaît un réel succès des ventes pour les jeux de rôle qui représentent plus de 23% des ventes, contre moins de 10% dans les deux autres zones.</p>
+											
+											<h3>Top 10 des jeux vidéo les plus populaires par zone géographique</h3>
+											<p align="justify">Les quatre tableaux ci-dessous nous présentent respectivement les 10 jeux les plus populaires dans le monde, en Amérique du Nord, en Europe et au Japon. Le critère de popularité est ici représenté par les ventes des jeux dans chaque zone.</p>
+											<div id="table_div" align="center"></div>
+											<p></p>
+											<div id="table_div2" align="center"></div>
+											<p></p>
+											<div id="table_div3" align="center"></div>
+											<p></p>
+											<div id="table_div4" align="center"></div>
+											<p></p>
+											<p align="justify">Ces quatre tableaux de classements confirment les observations faites concernant les ventes par genre et par zone géographique. En effet, les jeux les plus populaires en Amérique du Nord sont des jeux de tir (la série "Call of Duty") ou des jeux d'action (les jeux "Grand Theft Auto"). Ces jeux sont également dans le top 10 mondial puisque l'Amérique du Nord représente une part importante des ventes mondiales.</p>
+											<p align="justify">Les jeux les plus populaires en Europe sont également des jeux des séries "Call of Duty" ou "Grand Theft Auto" ainsi que "Red Dead Redemption" qui est également un jeu d'action qui figure dans le classement mondial. Les jeux de sport de la série "FIFA" sont également très populaires en Europe.</p>
+											<p align="justify">Enfin, les jeux les plus populaires au Japon sont bien des jeux de rôle : les séries "Yokai Watch", "Monster Hunter", "Final Fantasy" ou encore "Dragon Quest". Les jeux de sports de la série "Hot Shots Golf" sont également très populaires dans ce pays. Le classement japonais présente aussi dans ses jeux les plus populaires un jeu musical ("PaRappa The Rapper") et un jeu de combat ("Tekken 2").</p>
+											<p align="justify">Les jeux vidéos les plus populaires en Amérique du Nord et en Europe le sont généralement aussi dans le monde car ces deux zones représentent une très grande part des ventes mondiales de jeux vidéo. De plus, les jeux les plus populaires dans ces deux zones sont presque les mêmes, en mettant la série "FIFA" pour l'Europe de côté. Le Japon présente bien des résultats différents des autres pays en reflétant des goûts différents en matières de genres de jeux vidéo.</p>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Les jeux vidéos en chiffres. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

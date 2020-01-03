@@ -1,0 +1,76 @@
+<result>
+  <genre>Action</genre>
+  <count>7461</count>
+</result>
+<result>
+  <genre>Sports</genre>
+  <count>5211</count>
+</result>
+<result>
+  <genre>Adventure</genre>
+  <count>5158</count>
+</result>
+<result>
+  <genre>Shooter</genre>
+  <count>4498</count>
+</result>
+<result>
+  <genre>Role-Playing</genre>
+  <count>4462</count>
+</result>
+<result>
+  <genre>Platform</genre>
+  <count>3380</count>
+</result>
+<result>
+  <genre>Strategy</genre>
+  <count>3214</count>
+</result>
+<result>
+  <genre>Puzzle</genre>
+  <count>3111</count>
+</result>
+<result>
+  <genre>Racing</genre>
+  <count>2998</count>
+</result>
+<result>
+  <genre>Simulation</genre>
+  <count>2693</count>
+</result>
+<result>
+  <genre>Fighting</genre>
+  <count>2052</count>
+</result>
+<result>
+  <genre>Action-Adventure</genre>
+  <count>557</count>
+</result>
+<result>
+  <genre>Visual Novel</genre>
+  <count>246</count>
+</result>
+<result>
+  <genre>Music</genre>
+  <count>193</count>
+</result>
+<result>
+  <genre>MMO</genre>
+  <count>72</count>
+</result>
+<result>
+  <genre>Party</genre>
+  <count>69</count>
+</result>
+<result>
+  <genre>Board Game</genre>
+  <count>15</count>
+</result>
+<result>
+  <genre>Sandbox</genre>
+  <count>9</count>
+</result>
+<result>
+  <genre>Education</genre>
+  <count>9</count>
+</result>

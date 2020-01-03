@@ -1,0 +1,9 @@
+(for $game in /collection/game
+let $name := $game/name/official/text()
+let $esrb := $game/esrb_rating/text()
+let $platform := $game/platform/text()
+let $sales := $game/distribution/sales[@area="usa"]
+group by $name, $sales, $esrb, $platform
+order by xs:decimal($sales) descending
+return
+<result><name>{$name}</name><platform>{$platform}</platform><esrb>{$esrb}</esrb><sales>{$sales}</sales></result>)[position() = 1 to 10]

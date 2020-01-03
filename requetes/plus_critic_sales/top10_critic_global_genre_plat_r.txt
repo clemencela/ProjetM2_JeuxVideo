@@ -1,0 +1,60 @@
+<result>
+  <name>Grand Theft Auto IV</name>
+  <platform>X360</platform>
+  <genre>Action</genre>
+  <critic>10.0</critic>
+</result>
+<result>
+  <name>Grand Theft Auto IV</name>
+  <platform>PS3</platform>
+  <genre>Action</genre>
+  <critic>10.0</critic>
+</result>
+<result>
+  <name>Dragon Quest XI: Echoes of an Elusive Age</name>
+  <platform>PS4</platform>
+  <genre>Role-Playing</genre>
+  <critic>10.0</critic>
+</result>
+<result>
+  <name>Red Dead Redemption: Undead Nightmare</name>
+  <platform>PS3</platform>
+  <genre>Action</genre>
+  <critic>10.0</critic>
+</result>
+<result>
+  <name>Red Dead Redemption: Undead Nightmare</name>
+  <platform>X360</platform>
+  <genre>Action</genre>
+  <critic>10.0</critic>
+</result>
+<result>
+  <name>Red Dead Redemption 2</name>
+  <platform>PS4</platform>
+  <genre>Action-Adventure</genre>
+  <critic>9.8</critic>
+</result>
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>PS4</platform>
+  <genre>Action</genre>
+  <critic>9.7</critic>
+</result>
+<result>
+  <name>God of War (2018)</name>
+  <platform>PS4</platform>
+  <genre>Action</genre>
+  <critic>9.7</critic>
+</result>
+<result>
+  <name>The Orange Box</name>
+  <platform>X360</platform>
+  <genre>Shooter</genre>
+  <critic>9.7</critic>
+</result>
+<result>
+  <name>Grand Theft Auto: Vice City</name>
+  <platform>PS2</platform>
+  <genre>Action</genre>
+  <critic>9.6</critic>
+</result>

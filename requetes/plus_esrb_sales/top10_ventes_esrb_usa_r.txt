@@ -1,0 +1,60 @@
+<result>
+  <name>Call of Duty: Black Ops</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>9.76</sales>
+</result>
+<result>
+  <name>Call of Duty: Modern Warfare 3</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>9.07</sales>
+</result>
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>9.06</sales>
+</result>
+<result>
+  <name>Call of Duty: Modern Warfare 2</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>8.54</sales>
+</result>
+<result>
+  <name>Grand Theft Auto: Vice City</name>
+  <platform>PS2</platform>
+  <esrb>M</esrb>
+  <sales>8.41</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops II</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>8.27</sales>
+</result>
+<result>
+  <name>Halo: Reach</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>7.08</sales>
+</result>
+<result>
+  <name>Grand Theft Auto III</name>
+  <platform>PS2</platform>
+  <esrb>M</esrb>
+  <sales>6.99</sales>
+</result>
+<result>
+  <name>Grand Theft Auto IV</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>6.8</sales>
+</result>
+<result>
+  <name>Call of Duty: Ghosts</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>6.76</sales>
+</result>

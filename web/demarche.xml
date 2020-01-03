@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="application/xml" href="../transformation/demarche.xsl"?>
+<page>
+	<head_logo>
+		<titre_onglet>Démarche</titre_onglet>
+		<titre_banniere>Les jeux vidéo en chiffres</titre_banniere>
+	</head_logo>
+	<demarche titre="Démarche adoptée pour ce projet">
+		<etape n="1" titre="Présentation générale du projet">
+			<contenu type="texte">Le but de ce projet était d'explorer une problématique qui nous intéressait tout en utilisant les notions abordées dans le cours "Documents structurés". Passionnées par les jeux vidéo, nous avons décidé d'en faire le thème de notre travail de groupe. Sur cette page, vous trouverez la présentation détaillée de la démarche globale adoptée pour ce projet et les différentes étapes mises en oeuvre dans sa réalisation.</contenu>
+			<contenu type="texte">La première étape a consisté à structurer l'environnement de travail sur nos machines afin que chacune puisse travailler à distance sur ce projet tout en ayant le même environnement (vous trouverez l'architecture de cet environnement sur notre Git sur Github, dont le lien est visible dans l'onglet "Remarques" de ce site). Par ailleurs, nous avons utilisé Git pour collaborer tout au long de ce projet et nous nous sommes servi d'un Kanban Board pour suivre l'évolution de celui-ci au fur et à mesure et se donner des tâches intermédiaires à réaliser. Nous avons ensuite récupéré des données à exploiter qui vous sont présentées dans la suite de cette page.</contenu>
+			<contenu type="texte">L'étape suivante a consisté à analyser ces données récupérées afin de sélectionner uniquement les informations pertinentes pour notre tâche puis nous avons pu, à partir de ces données triées, travailler sur une modélisation XML de celles-ci. Enfin, nous avons établi une grammaire de validation de cette modélisation XML à travers une DTD et un schéma RelaxNG.</contenu>
+			<contenu type="texte">La dernière étape a été de valoriser ces données au format XML pour en obtenir des visualisations graphiques intéressantes. Nous avons décidé de formuler différentes requêtes XQuery pour interroger nos documents XML et obtenir des données statistiques autour du domaine des jeux vidéo. Enfin, nous avons utilisé Google Charts pour visualiser ces résultats.</contenu>
+		</etape>
+		<etape n="2" titre="Présentation du corpus">
+			<contenu type="texte">Une fois le thème du projet choisi, nous avons dû rechercher des données correspondant à celui-ci. Nous sommes allées sur le site Kaggle.com qui propose généralement de bons datasets utilisables pour différentes tâches allant de simples traitements statistiques à des tâches de machine learning par exemple. Nous avons trouvé un ensemble de données s'intitulant "Video Games Sales 2019" (vous trouverez le lien vers ces données sur notre Github). Ce jeu de données encodé en UTF-8 et datant d'avril 2019 se présente au format CSV et liste des jeux vidéo ainsi que des informations de critiques (officielles ou des notes attribuées par des joueurs) et de ventes les concernant. Toutes ces données proviennent d'un scrape du site vgchartz.com, site web spécialisé dans les statistiques de ventes de jeux vidéos.</contenu>
+			<contenu type="texte">Ce fichier CSV fait un peu plus de 12 Mo et contient 55 792 données de jeux vidéo différents. Il est organisé en 23 champs : </contenu>
+			<contenu type="liste">
+				<element_liste>Rank : rang de classement d'après toutes les ventes</element_liste>
+				<element_liste>Name : nom officiel du jeu</element_liste>
+				<element_liste>basename : nom officiel du jeu formatté en minuscules, et les espaces remplacés par des tirets</element_liste>
+				<element_liste>Genre : genre du jeu</element_liste>
+				<element_liste>ESRB (Entertainment Software Rating Board) Rating : symbole correspondant au public conseillé pour le jeu</element_liste>
+				<element_liste>Platform : plateforme du jeu (PC, Wii, PS4 par exemple)</element_liste>
+				<element_liste>Publisher : éditeur du jeu</element_liste>
+				<element_liste>Developer : concepteur du jeu</element_liste>
+				<element_liste>VGChartz_Score : note sur 10 du site (champ vide pour toutes les données)</element_liste>
+				<element_liste>Critic Score : note sur 10 de la critique</element_liste>
+				<element_liste>User Score : note sur 10 des joueurs</element_liste>
+				<element_liste>Total Shipped : nombre total d'exemplaires du jeu exportés</element_liste>
+				<element_liste>Global_Sales : ventes mondiales du jeu en millions</element_liste>
+				<element_liste>NA_Sales : ventes du jeu en millions pour l'Amérique du Nord</element_liste>
+				<element_liste>PAL_Sales : ventes du jeu en millions pour l'Europe</element_liste>
+				<element_liste>JP_Sales : ventes du jeu en millions pour le Japon</element_liste>
+				<element_liste>Other_Sales : ventes du jeu en millions pour le reste du monde</element_liste>
+				<element_liste>Year : année de sortie du jeu</element_liste>
+				<element_liste>Last_Update : dernière mise à jour de la fiche du jeu sur le site</element_liste>
+				<element_liste>url : url de la fiche sur le site vgchartz</element_liste>
+				<element_liste>status : statut du scrape de la fiche</element_liste>
+				<element_liste>Vgchartzscore : note sur 10 du site</element_liste>
+				<element_liste>img_url : url de l'image du jeu</element_liste>
+			</contenu>
+			<contenu type="texte">Après avoir téléchargé ce jeu de données en CSV, nous avons décidé d'orienter notre projet autour des jeux vidéo et des différentes statistiques qui peuvent en ressortir : classements par rapport aux différentes ventes, aux genres des jeux, aux différentes plateformes ou encore aux années de sortie par exemple. Une fois cet objectif de différentes statistiques posé, nous avons voulu simplifier notre jeu de données et ne garder que les champs nécessaires à celles-ci. Ainsi, vous trouverez dans la prochaine section une description des pré-traitements réalisés afin de simplifier notre jeu de données pour son exploitation.</contenu>
+		</etape>
+		<etape n="3" titre="Pré-traitements effectués sur le corpus">
+			<contenu type="texte">Avant de commencer à trier les données, nous les avons déjà étudiées afin de les connaître plus précisément et de faire les bons choix pour la suite du projet. En effet, nous ne voulions pas garder de jeux vidéo contenant des champs vides puisqu'il aurait été alors difficile de les inclure correctement dans des calculs de statistiques. Pour commencer, nous avons décidé de ne pas garder les champs suivants : </contenu>
+			<contenu type="liste">
+				<element_liste>Last_Update : il nous importe peu de savoir à quel moment la fiche du jeu a été mise à jour (par ailleurs, 46 606 lignes sur 55 792 ont ce champ vide)</element_liste>
+				<element_liste>url : nous ne souhaitons pas garder trace de l'adresse de la fiche</element_liste>
+				<element_liste>status : cette information ne doit pas rentrer dans des statistiques concernant les jeux</element_liste>
+				<element_liste>Vgchartzscore : nous ne gardons pas cette donnée qui aurait pu être intéressante car 54 993 lignes sur 55 792 ont ce champ vide (seulement 799 lignes ont une valeur pour cette note ! )</element_liste>
+				<element_liste>img_url : comme pour l'url de la fiche du jeu, nous ne souhaitons pas garder trace de l'image du jeu</element_liste>
+				<element_liste>VGChartz_Score : nous ne gardons pas ce champ car il est vide pour toutes les lignes</element_liste>
+				<element_liste>User Score : nous ne gardons pas cette donnée qui aurait pu être également intéressante car 55 457 lignes sur 55 792 ont ce champ vide (seulement 335 lignes ont une valeur pour cette note ! )</element_liste>
+				<element_liste>Total Shipped : nous ne gardons pas cette donnée car nous trouvons qu'elle ne peut pas être intégrée à des statistiques de ventes et ce champ est, par ailleurs, vide pour 53 965 lignes sur 55 792</element_liste>
+				<element_liste>Other_Sales : nous ne gardons pas ce champ car nous ne trouvons pas cette information intéressante dans la mesure où celle-ci ne concerne pas des pays ou continents en particulier mais le reste du monde par rapport aux autres chiffres de ventes</element_liste>
+			</contenu>
+			<contenu type="texte">Après avoir décidé d'enlever ces différents champs, nous avons pris des notes concernant la répartition des données selon les différents champs restants qui nous intéressaient afin de prendre certaines décisions quant à la suite du projet. Ainsi, nous avons pu faire les observations suivantes : </contenu>
+			<contenu type="liste">
+				<element_liste>Le champ "Global_Sales" est rempli pour 19 595 lignes sur 55 792.</element_liste>
+				<element_liste>Le champ "NA_Sales" est rempli pour 12 964 lignes sur 55 792.</element_liste>
+				<element_liste>Le champ "PAL_Sales" est rempli pour 13 189‬ lignes sur 55 792.</element_liste>
+				<element_liste>Le champ "JP_Sales" est rempli pour 7 143 lignes sur 55 792.</element_liste>
+				<element_liste>Le champ "Critic Score" est rempli pour 6 536 lignes sur 55 792.</element_liste>
+				<element_liste>Le champ "ESRB Rating" est rempli pour 23 623 lignes sur 55 792.</element_liste>
+				<element_liste>Le champ "Year" est rempli pour 54 813‬ lignes sur 55 792.</element_liste>
+			</contenu>
+			<contenu type="texte">Au vu de ces différents résultats, nous avons décidé de répartir notre jeu de données en quatre nouveaux jeux de données selon les différentes statistiques à appliquer dessus par la suite. Nous avons opté pour cette solution afin de ne pas avoir un jeu de données extrêmement réduit en incluant tous les champs cités ci-dessus, car certaines lignes pouvaient avoir tous les champs remplis sauf un par exemple et nous ne voulions pas garder de lignes comportant des données vides. Ainsi, nous avons choisi de répartir les données dans ces quatre jeux de données différents : </contenu>
+			<contenu type="liste_para">
+				<element_liste>Un jeu de données basique dans lequel toutes les lignes avec des valeurs dans les champs "Rank", "Name", "basename", "Genre", "Platform", "Publisher", "Developer", "Year" sont gardées. Ce jeu de données comporte ainsi 54 799 lignes (c'est-à-dire les informations concernant 54 799 jeux vidéos différents). Il peut servir à faire des statistiques basiques concernant le genre, l'année de sortie ou encore l'éditeur du jeu par exemple.</element_liste>
+				<element_liste>Un jeu de données concernant les ventes qui contient toutes les lignes avec des valeurs dans les champs cités précédemment pour le jeu de données basique ainsi que dans les champs "Global_Sales", "NA_Sales", "PAL_Sales", "JP_Sales". Ce jeu de données de 2438 lignes permet de réaliser des statistiques sur les différentes informations de vente concernant les jeux vidéo et permet de faire des comparaisons par zone géographique par exemple. </element_liste>
+				<element_liste>Un jeu de données concernant les critiques et les ventes qui contient toutes les lignes avec des valeurs dans les champs des jeux de données basique et de ventes ainsi que dans le champ "Critic Score". Ce jeu de données de 1317 lignes permet de réaliser des statistiques sur les notes obtenues par les jeux vidéo et permet également d'étudier les ventes de jeux selon leur note par exemple.</element_liste>
+				<element_liste>Un jeu de données concernant les symboles ESRB et les ventes qui contient toutes les lignes avec des valeurs dans les champs des jeux de données basique et de ventes ainsi que dans le champ "ESRB Rating". Ce jeu de données de 2286 lignes permet de réaliser des statistiques sur les différents publics conseillés pour les jeux et de mettre cette information en relation avec les différentes ventes par exemple.</element_liste>
+			</contenu>
+			<contenu type="texte">Ces quatre jeux de données nous permettent de croiser différentes informations afin d'obtenir diverses représentations de nos données à travers les résultats statistiques sous forme de graphiques. Le premier jeu de données concernant les informations basiques des jeux vidéo contient énormément d'exemples mais malheureusement, les trois autres jeux de données concernant les informations annexes de ventes, critiques et symboles ESRB ne contiennent que très peu de données car ces informations sont peu fournies dans le corpus d'origine. Nous avons opté pour cette solution afin de pouvoir présenter différents résultats selon différentes informations sur les jeux vidéo. Bien entendu, il est nécessaire de ne pas comparer les résultats statistiques des différents jeux de données entre eux, étant donné qu'ils ne présentent pas la même répartition des données.</contenu>
+			<contenu type="texte">Après avoir décidé de répartir les données selon cette modélisation, nous avons écrit un script Python pour lire le jeu de données initial au format CSV et générer quatre nouveaux jeux de données toujours au format CSV en faisant des tris sur les différents champs. Vous pouvez visualiser ce script commenté ci-dessous (que vous pouvez retrouver sur notre Github dans le répertoire "script" puis "csv_to_4_csv.py") : </contenu>
+			<contenu type="doc" chemin="./docs/scriptcsv.pdf"></contenu>
+			<contenu type="texte">Après avoir lancé le script, nous obtenons alors bien quatre jeux de données différents qui vont donner naissance à quatre modélisations XML, expliquées dans la suite de cette page. Les noms des fichiers CSV sont les suivants (ces fichiers sont disponibles sur notre Github dans le répertoire "data" puis "CSV") : </contenu>
+			<contenu type="liste">
+				<element_liste>"basic.csv" : jeu de données basique</element_liste>
+				<element_liste>"plus_sales.csv" : jeu de données concernant les ventes</element_liste>
+				<element_liste>"plus_critic_sales.csv" : jeu de données concernant les ventes et les critiques</element_liste>
+				<element_liste>"plus_esrb_sales.csv" : jeu de données concernant les ventes et les symboles ESRB</element_liste>
+			</contenu>
+		</etape>
+		<etape n="4" titre="Modélisation XML de nos données">
+			<contenu type="texte">Après avoir obtenu nos quatre nouveaux fichiers CSV regroupant les informations des jeux vidéo par thématique, nous avons réfléchi à une modélisation XML de ceux-ci. Nous avons commencé par le jeu de données basique "basic.csv" puisque c'est ce jeu de données qui instaure une modélisation XML à respecter et à compléter pour les autres jeux de données. Ainsi, notre modélisation XML se veut être la plus générique possible pour que le modèle de base constitue la base de chaque modélisation.</contenu>
+			<contenu type="texte">Etant donné que nos données concernent des jeux vidéo et qu'une ligne de fichier correspond à un jeu vidéo, nous avons décidé de nommer la racine du fichier XML "collection". Cette balise peut alors contenir chaque jeu vidéo dans une balise "game" dont l'attribut "rank" indique le rang de classement initial. L'élément "game" contient alors à chaque fois les différentes caractéristiques basiques d'un jeu vidéo. Tout d'abord, un élément "name" peut contenir un élément "official" ayant le contenu du champ "Name" et un élément "ascii" ayant le contenu du champ "basename". Ensuite, les éléments "genre" et "platform" contenant les informations des champs du même nom peuvent compléter cette modélisation. Nous avons décidé de regrouper les informations des champs "Publisher" et "Developer" dans un élément "production" qui contient lui-même un élément "publisher" et un autre élément "developer". Enfin, le dernier élément contenu dans "game" est "year" qui présente le contenu du champ du même nom. Vous trouverez ci-dessous un exemple de ce que rend cette modélisation avec une instance de jeu vidéo : </contenu>
+			<contenu type="image" chemin="images/model1.PNG"></contenu>
+			<contenu type="texte">Concernant la modélisation du deuxième jeu de données, "plus_sales.csv", celle-ci reprend bien entendu les éléments présentés dans la modélisation du premier jeu de données et ajoute un élément "distribution" pouvant contenir les informations des différents champs concernant les ventes de jeux vidéo. Ainsi, des élements "sales" dont les attributs "area" indiquent leur zone géographique ("global", "usa", "europe", "japan") sont englobés par cet élément "distribution". Nous avons opté pour cette modélisation car nous voulions regrouper les informations de ventes puisqu'elles représentent la même sémantique. Vous trouverez ci-dessous un exemple de ce que rend cette modélisation avec une instance de jeu vidéo : </contenu>
+			<contenu type="image" chemin="images/model2.PNG"></contenu>
+			<contenu type="texte">Pour le troisième jeu de données, "plus_critic_sales.csv", nous avons bien entendu conservé les modélisations XML des informations basiques et des informations de vente et nous avons décidé d'ajouter un élément "critic_score" contenu dans l'élément "game" pour encoder la note de chaque jeu obtenue par la critique. Cette modélisation vous est présentée ci-dessous dans un exemple avec une instance de jeu vidéo : </contenu>
+			<contenu type="image" chemin="images/model3.PNG"></contenu>
+			<contenu type="texte">Enfin, concernant le quatrième et dernier jeu de données, "plus_esrb_sales.csv", nous avons également conservé les modélisations XML des informations basiques et des informations de vente et nous avons décidé d'ajouter un élément "esrb_rating" contenu dans l'élément "game" pour encoder le symbole ESRB de chaque jeu. Vous trouverez ci-dessous un exemple de ce que rend cette modélisation avec une instance de jeu vidéo : </contenu>
+			<contenu type="image" chemin="images/model4.PNG"></contenu>
+			<contenu type="texte">Après avoir opté pour ces différentes modélisations XML, nous avons écrit un script Python prenant en entrée nos quatre jeux de données au format CSV et générant quatre fichiers XML respectant ces modélisations. Etant donné que la base de chaque modélisation se répète, nous avons fait quatre fonctions différentes afin de faciliter l'écriture et la lecture du code (et ne pas répéter plusieurs fois des bouts de code identiques). Vous pouvez visualiser ce script commenté ci-dessous (que vous pouvez retrouver sur notre Github dans le répertoire "script" puis "csv_to_xml.py") : </contenu>
+			<contenu type="doc" chemin="./docs/scriptxml.pdf"></contenu>
+			<contenu type="texte">Après avoir lancé le script, nous obtenons alors bien quatre fichiers XML respectant chaque modélisation expliquée ci-dessus. Les noms des fichiers XML sont les suivants (ces fichiers sont disponibles sur notre Github dans le répertoire "xml") : </contenu>
+			<contenu type="liste">
+				<element_liste>"basic.xml" : jeu de données basique</element_liste>
+				<element_liste>"plus_sales.xml" : jeu de données concernant les ventes</element_liste>
+				<element_liste>"plus_critic_sales.xml" : jeu de données concernant les ventes et les critiques</element_liste>
+				<element_liste>"plus_esrb_sales.xml" : jeu de données concernant les ventes et les symboles ESRB</element_liste>
+			</contenu>
+			<contenu type="texte">Les documents ont bien été jugés conformes par le logiciel Oxygen. Message affiché pour chaque document XML : "Le document est conforme.".</contenu>
+		</etape>
+		<etape n="5" titre="Établissement d'une grammaire de validation">
+		<contenu type="texte">Concernant l'établissement d'une grammaire de validation pour nos modélisations XML, nous avons décidé de rédiger une DTD (Document Type Definition) ainsi qu'un schéma RelaxNG (Regular Language for XML Next Generation) avec utilisation de patrons nommés. Par ailleurs, nous avons également produit une version compacte de ce schéma. La DTD ainsi que les deux schémas nous permettent de valider les quatre fichiers XML.</contenu>
+		<contenu type="texte">La première grammaire de validation que nous avons décidé de rédiger est une DTD. Cette DTD permet de décrire la structure logique et physique des quatres documents xml, c'est-à-dire indiquer les noms des éléments qui peuvent apparaître ainsi que leur contenu. Par ailleurs, il est possible d'indiquer des entités globales qui permettent d'éviter les répétitions. Nous avons utilisé une entité pour le type de donnée #PCDATA qui est une chaîne de caractères. Il n'est malheureusement pas possible de donner plus de précision concernant le type de donnée (int, float, etc.) dans un schéma DTD, contrairement aux schémas RelaxNG par exemple. Vous pouvez visualiser ci-dessous cette DTD commentée (que vous pouvez retrouver sur notre Github dans le répertoire "grammaire" puis "DTD.dtd") : </contenu>
+		<contenu type="doc" chemin="./docs/dtd.pdf"></contenu>
+		<contenu type="texte">Nous avons ensuite décidé d'écrire un schéma RelaxNG en utilisant les patrons nommés afin de pouvoir représenter clairement notre modélisation XML à l'aide de patterns définis au fur et à mesure en utilisant la syntaxe et les mots-clés de ce type de schéma. Dans ce schéma, nous avons pu restreindre les types de nos attributs ou éléments. Ainsi, la plupart des éléments et attributs sont de type "text" sauf l'attribut "rank" et l'élément "year" qui sont de type "integer" et les éléments "sales" et "critic_score" qui sont de type "float". Vous pouvez visualiser ci-dessous ce schéma RelaxNG avec patrons nommés commenté (que vous pouvez retrouver sur notre Github dans le répertoire "grammaire" puis "relax_patron_pour_4.rng") : </contenu>
+		<contenu type="doc" chemin="./docs/schemapatron.pdf"></contenu>
+		<contenu type="texte">Enfin, nous avons voulu écrire le même schéma RelaxNG mais sous sa forme compacte pour se rendre compte de la différence de syntaxe entre les deux. Il n'y a aucune différence entre les deux, chacun est équivalent à l'autre. Vous pouvez visualiser cette version compacte ci-dessous (ce dernier n'est pas commenté étant donné qu'il retranscrit exactement les mêmes idées que le schéma RelaxNG avec patrons nommés expliqué en détail précédemment, vous pouvez le retrouver sur notre Github dans le répertoire "grammaire" puis "relax_compact_pour_4.rnc") : </contenu>
+		<contenu type="doc" chemin="./docs/schemacompact.pdf"></contenu>
+		<contenu type="texte">Les documents ont bien été validés par ces grammaires de validation par le logiciel Oxygen (même si nous avons relié les documents au schéma RelaxNG). Message affiché pour chaque document XML : "Validation réussie".</contenu>
+		</etape>
+		<etape n="6" titre="Interrogation de nos documents XML">
+		<contenu type="texte">Afin de valoriser nos données XML et de produire des visualisations statistiques à partir de celles-ci, nous avons décidé de formuler des requêtes XQuery traduisant nos souhaits de résultats. Une fois chaque requête appliquée au bon document XML, les résultats de celle-ci sont enregistrés dans un fichier texte afin de pouvoir les exploiter plus tard. Vous trouverez ci-dessous les différentes requêtes appliquées aux documents XML et quelques explications les concernant, ainsi qu'un extrait des résultats obtenus. Les requêtes et les résultats de celles-ci sont disponibles sur notre Github dans le répertoire "requetes" (les fichiers résultats ont les mêmes noms que les fichiers requêtes avec simplement un "r" à la fin).</contenu>
+		<contenu type="titre">Fichier "basic.xml" : requête 1</contenu>
+		<contenu type="image" chemin="images/requetebasic1.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de compter le nombre de jeux vidéo par année de sortie. On utilise la fonction count() qui utilise la variable $year comme condition. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetebasic1r.PNG"></contenu>
+		<contenu type="titre">Fichier "basic.xml" : requête 2</contenu>
+		<contenu type="image" chemin="images/requetebasic2.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de compter le nombre de jeux vidéo par genre. On utilise la fonction count() qui utilise la variable $genre comme condition. Enfin, on ne prend pas en compte le genre Misc ("miscellaneous"), car ce terme ne nous indique rien sur le genre des jeux. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetebasic2r.PNG"></contenu>
+		<contenu type="titre">Fichier "basic.xml" : requête 3</contenu>
+		<contenu type="image" chemin="images/requetebasic3.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de compter le nombre de jeux vidéo par genre et par décénnie. La variable $p nous donne la soustraction de la valeur de la variable $year et du reste de la division euclidienne par 10 avec l'opérateur mod. On regroupe par la première année de la décénnie et par genre. On ordonne à partir de la première année de la décénnie par ordre croissant. On affiche la première et la dernière année de la décénnie avec $p et $p+9. On précise que l'on souhaite les années après 1989 et avant 2020 (pour orienter nos résultats) et on ne prend pas en compte le genre "Misc" ("miscellaneous"), car ce terme ne nous indique rien sur le genre des jeux. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetebasic3r.PNG"></contenu>
+		<contenu type="titre">Fichier "basic.xml" : requête 4</contenu>
+		<contenu type="image" chemin="images/requetebasic4.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de compter le nombre de jeux vidéo par plateforme. On utilise la fonction count() qui utilise la variable $platform comme condition et on ordonne les résultats en fonction du nombre de jeux ($count) par ordre décroissant. À cause d'un trop grand nombre de résultats, on affiche seulement les 10 premières plateformes qui comptent le plus de jeux avec la condition position(). Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetebasic4r.PNG"></contenu>
+		<contenu type="titre">Fichier "basic.xml" : requête 5</contenu>
+		<contenu type="image" chemin="images/requetebasic5.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de compter le nombre de jeux vidéo par éditeur. On utilise la fonction count() qui utilise la variable $publisher comme condition et on demande à ce que l'éditeur "Unknown" ne soit pas pris en compte, car il ne nous donne aucune information. On ordonne les résultats en fonction du nombre de jeux ($count) par ordre décroissant. À cause d'un trop grand nombre de résultats, on affiche seulement les 10 premiers éditeurs qui comptent le plus de jeux avec la condition position(). Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetebasic5r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 1</contenu>
+		<contenu type="image" chemin="images/requetesales1.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de faire la somme des ventes de jeux vidéo dans le monde par année de sortie. On regroupe et on ordonne par année. La somme se fait lors de l'affichage du résultat. On utilise la fonction sum() qui va additionner le texte (ce sont des float) des noeuds "sales" qui ont "global" comme attribut selon chaque année. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales1r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 2</contenu>
+		<contenu type="image" chemin="images/requetesales2.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher la somme des ventes de jeux vidéo selon chaque région. On sélectionne d'abord le texte du noeud "sales" pour chaque attribut ("usa", "europe", "japan" et "global") et on fait la somme du texte pour chaque attribut. On affiche ensuite chaque total. Voici le résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales2r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 3</contenu>
+		<contenu type="image" chemin="images/requetesales3.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de faire la somme des ventes de jeux vidéo en Amérique du Nord selon les genres de jeux. On regroupe par genre et on exclut le genre "Misc". La somme se fait lors de l'affichage du résultat. On utilise la fonction sum() qui va additionner le texte (ce sont des float) des noeuds "sales" qui ont "usa" comme attribut selon chaque genre. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales3r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 4</contenu>
+		<contenu type="image" chemin="images/requetesales4.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de faire la somme des ventes de jeux vidéo en Europe selon les genres de jeux en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "europe". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales4r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 5</contenu>
+		<contenu type="image" chemin="images/requetesales5.PNG"></contenu>
+		<contenu type="texte">Cette requête permet de faire la somme des ventes de jeux vidéo au Japon selon les genres de jeux en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "japan". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales5r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 6</contenu>
+		<contenu type="image" chemin="images/requetesales6.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les jeux les plus vendus dans le monde. On affiche le nom du jeu et sa plateforme ainsi que ses ventes (en millions). On regroupe par nom et par vente. On affiche la plateforme car certains jeux étaient affichés deux fois mais avec des ventes différentes. La différence tient au fait que le même jeu se trouve sur deux plateformes différentes. On ordonne les résultats en fonction des ventes. Le nombre de ventes étant de type string, lorsque l'on demande d'ordonner par ordre décroissant, nous obtenons 1, 10, 11, 12, ..., 2, 20, 21, ... etc. On a donc précisé que la valeur de la variable $sales est décimale. Le nombre de résultats étant trop important, nous avons décidé de n'afficher que les 10 jeux les plus vendus dans le monde. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales6r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 7</contenu>
+		<contenu type="image" chemin="images/requetesales7.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les jeux les plus vendus en Amérique du Nord en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "usa". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales7r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 8</contenu>
+		<contenu type="image" chemin="images/requetesales8.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les jeux les plus vendus en Europe en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "europe". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales8r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_sales.xml" : requête 9</contenu>
+		<contenu type="image" chemin="images/requetesales9.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les jeux les plus vendus au Japon en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "japan". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetesales9r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_critic_sales.xml" : requête 1</contenu>
+		<contenu type="image" chemin="images/requetecritic1.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les jeux les mieux notés par la critique la plus élevée. On regroupe par titre, score, genre et plateforme du jeu. On ordonne les résultats selon la note de la critique par ordre décroisssant en précisant que ce sont des valeurs décimales sinon l'ordre n'est pas correct. En raison du trop grand nombre de résultats, on affiche seulement les 10 premiers jeux ayant le plus haut score avec sa plateforme et son genre. Pour cela on utilise la fonction position(). Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetecritic1r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_critic_sales.xml" : requête 2</contenu>
+		<contenu type="image" chemin="images/requetecritic2.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les jeux les mieux notés par la critique en fonction de leurs ventes selon les différentes régions (monde, Amérique du Nord, Europe, Japon). On regroupe selon le titre et la plateforme du jeu, ses ventes dans les quatre zones géographiques, et sa note de la critique. On ordonne les résultats selon la note de la critique par ordre décroissant en précisant que ce sont des valeurs décimales sinon l'ordre n'est pas celui souhaité. On affiche pour chaque jeu son nom, sa plateforme, ses ventes mondiales, américaines, européennes et japonaises. Le nombre de résultats retournés est très important, donc on affiche seulement les 10 jeux les mieux notés. Pour cela on utilise la fonction position(). Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requetecritic2r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 1</contenu>
+		<contenu type="image" chemin="images/requeteesrb1.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher le nombre de jeux pour chaque symbole ESRB. On utilise la fonction count() qui utilise la variable $esrb comme condition et on ordonne les résultats par ordre décroissant selon le compte pour chaque symbole ESRB. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb1r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 2</contenu>
+		<contenu type="image" chemin="images/requeteesrb2.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les ventes de jeux vidéo pour chaque symbole ESRB en Amérique du Nord. On regroupe selon le symbole ESRB du jeu. Avec la fonction sum() on fait la somme des ventes en précisant pour le noeud "sales" que l'on souhaite l'attribut "usa". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb2r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 3</contenu>
+		<contenu type="image" chemin="images/requeteesrb3.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les ventes de jeux vidéo pour chaque symbole ESRB en Europe en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "europe". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb3r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 4</contenu>
+		<contenu type="image" chemin="images/requeteesrb4.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher les ventes de jeux vidéo pour chaque symbole ESRB au Japon en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "japan". Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb4r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 5</contenu>
+		<contenu type="image" chemin="images/requeteesrb5.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher le symbole ESRB attribué aux jeux les plus vendus dans le monde. On regroupe selon le titre du jeu, sa plateforme, ses ventes mondiales et son symbole ESRB. On ordonne les résultats selon les ventes par ordre décroissant en précisant que ce sont des valeurs décimales sinon l'ordre n'est pas celui souhaité. On affiche pour chaque jeu, son nom, sa plateforme, ses ventes mondiales et son symbole ESRB. Le nombre de résultats retournés est très important, donc on affiche seulement les 10 jeux les plus vendus. Pour cela on utilise la fonction position(). Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb5r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 6</contenu>
+		<contenu type="image" chemin="images/requeteesrb6.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher le symbole ESRB attribué aux jeux les plus vendus en Amérique du Nord en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "usa" pour avoir les ventes américaines. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb6r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 7</contenu>
+		<contenu type="image" chemin="images/requeteesrb7.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher le symbole ESRB attribué aux jeux les plus vendus en Europe en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "europe" pour avoir les ventes européennes. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb7r.PNG"></contenu>
+		<contenu type="titre">Fichier "plus_esrb_sales.xml" : requête 8</contenu>
+		<contenu type="image" chemin="images/requeteesrb8.PNG"></contenu>
+		<contenu type="texte">Cette requête permet d'afficher le symbole ESRB attribué aux jeux les plus vendus au Japon en suivant exactement la même logique que la requête précédente. On a simplement modifié la condition sur l'attribut "area" avec la valeur "japan" pour avoir les ventes japonaises. Voici un extrait du résultat produit : </contenu>
+		<contenu type="image" chemin="images/requeteesrb8r.PNG"></contenu>
+		</etape>
+		<etape n="7" titre="Traitement des résultats et visualisation">
+		<contenu type="texte">Une fois les résultats de ces différentes requêtes enregistrés, nous avons décidé d'utiliser Google Charts pour créer des graphiques en JavaScript. Afin de ne pas copier à la main les différents résultats, nous avons écrit un script Python générant des fichiers contenant les résultats sous forme de "Google arrays" ou de "Google tables" formatés tels que l'on souhaite organiser les résultats. Vous pouvez visualiser ce script commenté ci-dessous (que vous pouvez retrouver sur notre Github dans le répertoire "script" puis "transfo_result_google_array.py") : </contenu>
+		<contenu type="doc" chemin="./docs/scriptarray.pdf"></contenu>
+		<contenu type="texte">Les fichiers textes obtenus grâce à ce script sont sauvegardés dans le répertoire "requetes_arrays". Nous avons donc utilisé ces fichiers pour créer des graphiques ou tableaux Google Charts, disponibles dans le répertoire "graphs". Nous avons ensuite intégré proprement ces différents graphiques aux pages de présentation des résultats que vous pouvez retrouver dans l'onglet "Résultats". Ces visualisations sont organisées encore une fois par fichier XML.</contenu>
+		<contenu type="texte">Nous vous invitons maintenant à découvrir les différentes visualisations des résultats disponibles dans l'onglet "Résultats" et à jeter un coup d'oeil à nos remarques concernant le projet en cliquant sur l'onget "Remarques". Pour remonter en haut de la page, cliquez sur le bouton ci-dessous : </contenu>
+		</etape>
+	</demarche>
+</page>

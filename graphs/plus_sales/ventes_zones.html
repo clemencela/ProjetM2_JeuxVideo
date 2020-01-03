@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+	var myMapsApiKey = 'AIzaSyDXG5CIVvs9n6GCi4kph3MXGngC8nxxcA0';
+      google.charts.load('current', {
+        'packages':['geochart'], mapsApiKey: myMapsApiKey 
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+		["Pays", "Ventes (en millions)", "Continent"],
+["United States", 1340.2399999999805, "Amérique du Nord"],
+["Canada", 1340.2399999999805, "Amérique du Nord"],
+["Mexico", 1340.2399999999805, "Amérique du Nord"],
+["France", 1007.5899999999891, "Europe"],
+["Germany", 1007.5899999999891, "Europe"],
+["Spain", 1007.5899999999891, "Europe"],
+["Portugal", 1007.5899999999891, "Europe"],
+["Italy", 1007.5899999999891, "Europe"],
+["United Kingdom", 1007.5899999999891, "Europe"],
+["Ireland", 1007.5899999999891, "Europe"],
+["Poland", 1007.5899999999891, "Europe"],
+["Russia", 1007.5899999999891, "Europe"],
+["Ukraine", 1007.5899999999891, "Europe"],
+["Sweden", 1007.5899999999891, "Europe"],
+["Norway", 1007.5899999999891, "Europe"],
+["Finland", 1007.5899999999891, "Europe"],
+["Romania", 1007.5899999999891, "Europe"],
+["Belarus", 1007.5899999999891, "Europe"],
+["Kazakhstan", 1007.5899999999891, "Europe"],
+["Greece", 1007.5899999999891, "Europe"],
+["Bulgaria", 1007.5899999999891, "Europe"],
+["Iceland", 1007.5899999999891, "Europe"],
+["Hungary", 1007.5899999999891, "Europe"],
+["Austria", 1007.5899999999891, "Europe"],
+["Czech Republic", 1007.5899999999891, "Europe"],
+["Serbia", 1007.5899999999891, "Europe"],
+["Lithuania", 1007.5899999999891, "Europe"],
+["Latvia", 1007.5899999999891, "Europe"],
+["Croatia", 1007.5899999999891, "Europe"],
+["Bosnia and Herzegovina", 1007.5899999999891, "Europe"],
+["Slovakia", 1007.5899999999891, "Europe"],
+["Estonia", 1007.5899999999891, "Europe"],
+["Denmark", 1007.5899999999891, "Europe"],
+["Switzerland", 1007.5899999999891, "Europe"],
+["Netherlands", 1007.5899999999891, "Europe"],
+["Moldova", 1007.5899999999891, "Europe"],
+["Belgium", 1007.5899999999891, "Europe"],
+["Armenia", 1007.5899999999891, "Europe"],
+["Albania", 1007.5899999999891, "Europe"],
+["North Macedonia", 1007.5899999999891, "Europe"],
+["Turkey", 1007.5899999999891, "Europe"],
+["Slovenia", 1007.5899999999891, "Europe"],
+["Montenegro", 1007.5899999999891, "Europe"],
+["Kosovo", 1007.5899999999891, "Europe"],
+["Cyprus", 1007.5899999999891, "Europe"],
+["Azerbaijan", 1007.5899999999891, "Europe"],
+["Luxembourg", 1007.5899999999891, "Europe"],
+["Georgia", 1007.5899999999891, "Europe"],
+["Andorra", 1007.5899999999891, "Europe"],
+["Malta", 1007.5899999999891, "Europe"],
+["Liechtenstein", 1007.5899999999891, "Europe"],
+["San Marino", 1007.5899999999891, "Europe"],
+["Monaco", 1007.5899999999891, "Europe"],
+["Vatican City", 1007.5899999999891, "Europe"],
+["Japan", 287.8799999999969, "Japon"],
+        ]);
+
+        var options = {displayMode:'regions',
+		region:'world',
+		resolution:'countries',
+		colorAxis: {colors: ['#993366','#ff3385','#ff9933']},
+        backgroundColor: '#ccf2ff',
+        datalessRegionColor: '#f2e6d9',
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+		
+		// defines the data for the tooltip
+        var formatter = new google.visualization.PatternFormat('{0}');
+        formatter.format( data, [1], 1 );
+        var formatter = new google.visualization.PatternFormat('{2}');
+        formatter.format( data, [0,1,2], 0 );
+
+        // defines the data for the chart values
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1]);
+		
+		
+
+        chart.draw(view, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

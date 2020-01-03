@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Ventes en millions"],
+["Action", 277.2999999999998],
+["Action-Adventure", 38.370000000000005],
+["Adventure", 40.050000000000026],
+["Board Game", 0.06],
+["Fighting", 77.87999999999997],
+["MMO", 0.87],
+["Music", 3.2],
+["Party", 0.54],
+["Platform", 82.79000000000003],
+["Puzzle", 17.259999999999994],
+["Racing", 90.80999999999995],
+["Role-Playing", 122.77999999999996],
+["Sandbox", 0.69],
+["Shooter", 332.7400000000008],
+["Simulation", 38.33000000000002],
+["Sports", 149.63000000000014],
+["Strategy", 13.910000000000002],
+["Visual Novel", 0.15000000000000002],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo selon les ventes (en millions) en Amérique du Nord',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+		
+		
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

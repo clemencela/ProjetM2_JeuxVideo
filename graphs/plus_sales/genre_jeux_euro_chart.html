@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Genre", "Ventes en millions"],
+["Action", 209.42000000000004],
+["Action-Adventure", 41.51999999999999],
+["Adventure", 32.130000000000024],
+["Board Game", 0.22],
+["Fighting", 42.970000000000006],
+["MMO", 0.44],
+["Music", 1.03],
+["Party", 0.55],
+["Platform", 50.900000000000034],
+["Puzzle", 5.969999999999996],
+["Racing", 92.50999999999999],
+["Role-Playing", 70.13000000000011],
+["Sandbox", 0.56],
+["Shooter", 222.29000000000002],
+["Simulation", 23.780000000000005],
+["Sports", 175.79999999999998],
+["Strategy", 6.229999999999998],
+["Visual Novel", 0.04],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo selon les ventes (en millions) en Europe',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'},{color: '#ffa366'},{},{color: '#009999'},{color: '#66ccff'},{color: '#00b386'},{color: '#79d279'},{color: '#33adff'}],
+		  pieSliceText: 'percentage'
+        };
+		
+		
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

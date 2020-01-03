@@ -1,0 +1,12 @@
+(for $game in /collection/game
+let $name := $game/name/official/text()
+let $plt := $game/platform/text()
+let $critic := $game/critic_score/text()
+let $salesglob := $game/distribution/sales[@area="global"]
+let $salesusa := $game/distribution/sales[@area="usa"]
+let $saleseuro := $game/distribution/sales[@area="europe"]
+let $salesjap := $game/distribution/sales[@area="japan"]
+group by $name, $plt, $salesglob, $salesusa, $saleseuro, $salesjap, $critic
+order by xs:decimal($critic) descending
+return
+<result><name>{$name}</name><platform>{$plt}</platform><salesglob>{$salesglob}</salesglob><salesusa>{$salesusa}</salesusa><saleseuro>{$saleseuro}</saleseuro><salesjap>{$salesjap}</salesjap></result>)[position() = 1 to 10]

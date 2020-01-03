@@ -1,0 +1,140 @@
+<result>
+  <year>1985</year>
+  <total>0.82</total>
+</result>
+<result>
+  <year>1986</year>
+  <total>3.2800000000000002</total>
+</result>
+<result>
+  <year>1987</year>
+  <total>2.04</total>
+</result>
+<result>
+  <year>1988</year>
+  <total>1.8900000000000001</total>
+</result>
+<result>
+  <year>1989</year>
+  <total>4.17</total>
+</result>
+<result>
+  <year>1990</year>
+  <total>7.199999999999999</total>
+</result>
+<result>
+  <year>1991</year>
+  <total>0.63</total>
+</result>
+<result>
+  <year>1992</year>
+  <total>3.55</total>
+</result>
+<result>
+  <year>1993</year>
+  <total>3.6999999999999997</total>
+</result>
+<result>
+  <year>1994</year>
+  <total>8.11</total>
+</result>
+<result>
+  <year>1995</year>
+  <total>12.620000000000001</total>
+</result>
+<result>
+  <year>1996</year>
+  <total>27.150000000000002</total>
+</result>
+<result>
+  <year>1997</year>
+  <total>47.420000000000016</total>
+</result>
+<result>
+  <year>1998</year>
+  <total>60.970000000000006</total>
+</result>
+<result>
+  <year>1999</year>
+  <total>50.400000000000006</total>
+</result>
+<result>
+  <year>2000</year>
+  <total>71.19999999999996</total>
+</result>
+<result>
+  <year>2001</year>
+  <total>101.13999999999997</total>
+</result>
+<result>
+  <year>2002</year>
+  <total>105.99999999999997</total>
+</result>
+<result>
+  <year>2003</year>
+  <total>90.77999999999996</total>
+</result>
+<result>
+  <year>2004</year>
+  <total>72.87</total>
+</result>
+<result>
+  <year>2005</year>
+  <total>94.22000000000007</total>
+</result>
+<result>
+  <year>2006</year>
+  <total>97.61000000000001</total>
+</result>
+<result>
+  <year>2007</year>
+  <total>174.40000000000003</total>
+</result>
+<result>
+  <year>2008</year>
+  <total>221.45999999999995</total>
+</result>
+<result>
+  <year>2009</year>
+  <total>225.93000000000012</total>
+</result>
+<result>
+  <year>2010</year>
+  <total>228.00999999999988</total>
+</result>
+<result>
+  <year>2011</year>
+  <total>240.85000000000005</total>
+</result>
+<result>
+  <year>2012</year>
+  <total>176.60999999999996</total>
+</result>
+<result>
+  <year>2013</year>
+  <total>185.27000000000004</total>
+</result>
+<result>
+  <year>2014</year>
+  <total>183.01999999999998</total>
+</result>
+<result>
+  <year>2015</year>
+  <total>146.85999999999999</total>
+</result>
+<result>
+  <year>2016</year>
+  <total>114.84000000000007</total>
+</result>
+<result>
+  <year>2017</year>
+  <total>116.38000000000001</total>
+</result>
+<result>
+  <year>2018</year>
+  <total>99.89999999999992</total>
+</result>
+<result>
+  <year>2020</year>
+  <total>0.16</total>
+</result>

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ESRB et ventes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart', 'table']});
+      google.charts.setOnLoadCallback(drawChart);
+	  google.charts.setOnLoadCallback(drawChart2);
+	  google.charts.setOnLoadCallback(drawChart3);
+	  google.charts.setOnLoadCallback(drawChart4);
+	  google.charts.setOnLoadCallback(drawTable);
+	  google.charts.setOnLoadCallback(drawTable2);
+	  google.charts.setOnLoadCallback(drawTable3);
+	  google.charts.setOnLoadCallback(drawTable4);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Symbole ESRB", "Nombre de jeux"],
+["T", 821],
+["E", 630],
+["M", 595],
+["E10", 237],
+["RP", 3],
+        ]);
+
+        var options = {
+          title: 'Répartition des jeux vidéo par symbole ESRB',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'}],
+		  pieSliceText: 'percentage',
+		  sliceVisibilityThreshold: .001
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart2() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Symbole ESRB", "Ventes (en millions)"],
+["M", 538.9999999999998],
+["E", 318.7999999999995],
+["T", 340.57999999999976],
+["E10", 89.07999999999996],
+["RP", 0.5900000000000001],
+        ]);
+
+        var options = {
+          title: 'Ventes américaines (en millions) de jeux vidéo par symbole ESRB',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'}],
+		  pieSliceText: 'percentage',
+		  sliceVisibilityThreshold: .0001
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart3() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Symbole ESRB", "Ventes (en millions)"],
+["M", 395.4099999999989],
+["E", 296.44999999999874],
+["T", 216.0800000000003],
+["E10", 63.55000000000004],
+["RP", 0.26],
+        ]);
+
+        var options = {
+          title: 'Ventes européennes (en millions) de jeux vidéo par symbole ESRB',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'}],
+		  pieSliceText: 'percentage',
+		  sliceVisibilityThreshold: .0001
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawChart4() {
+
+        var data = google.visualization.arrayToDataTable([
+		["Symbole ESRB", "Ventes (en millions)"],
+["M", 53.68999999999998],
+["E", 86.79000000000009],
+["T", 98.20000000000016],
+["E10", 22.02000000000003],
+["RP", 0.31],
+        ]);
+
+        var options = {
+          title: 'Ventes japonaises (en millions) de jeux vidéo par symbole ESRB',
+		  is3D: true,
+		  slices: [{color: '#ff9999'}, {color: '#ff6666'}, {color: '#ffb84d'}, {color: '#ff6699'},{color: '#9999ff'}],
+		  pieSliceText: 'percentage',
+		  sliceVisibilityThreshold: .0001
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
+
+        chart.draw(data, options);
+      }
+	  
+	  function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('string', 'Symbole ESRB');
+        data.addColumn('number', 'Ventes mondiales (en millions)');
+        data.addRows([
+		["Grand Theft Auto V (PS3)", "M", 20.32],
+["Grand Theft Auto V (PS4)", "M", 19.39],
+["Grand Theft Auto: Vice City (PS2)", "M", 16.15],
+["Grand Theft Auto V (X360)", "M", 15.86],
+["Call of Duty: Black Ops 3 (PS4)", "M", 15.09],
+["Call of Duty: Modern Warfare 3 (X360)", "M", 14.82],
+["Call of Duty: Black Ops (X360)", "M", 14.74],
+["Red Dead Redemption 2 (PS4)", "M", 13.94],
+["Call of Duty: Black Ops II (X360)", "M", 13.86],
+["Call of Duty: Black Ops II (PS3)", "M", 13.8],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawTable2() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('string', 'Symbole ESRB');
+        data.addColumn('number', 'Ventes américaines (en millions)');
+        data.addRows([
+		["Call of Duty: Black Ops (X360)", "M", 9.76],
+["Call of Duty: Modern Warfare 3 (X360)", "M", 9.07],
+["Grand Theft Auto V (X360)", "M", 9.06],
+["Call of Duty: Modern Warfare 2 (X360)", "M", 8.54],
+["Grand Theft Auto: Vice City (PS2)", "M", 8.41],
+["Call of Duty: Black Ops II (X360)", "M", 8.27],
+["Halo: Reach (X360)", "M", 7.08],
+["Grand Theft Auto III (PS2)", "M", 6.99],
+["Grand Theft Auto IV (X360)", "M", 6.8],
+["Call of Duty: Ghosts (X360)", "M", 6.76],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div2'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawTable3() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('string', 'Symbole ESRB');
+        data.addColumn('number', 'Ventes européennes (en millions)');
+        data.addRows([
+		["Grand Theft Auto V (PS3)", "M", 9.85],
+["Grand Theft Auto V (PS4)", "M", 9.71],
+["FIFA 18 (PS4)", "E", 8.64],
+["FIFA 17 (PS4)", "E", 7.95],
+["FIFA 19 (PS4)", "E", 6.87],
+["Red Dead Redemption 2 (PS4)", "M", 6.21],
+["Call of Duty: WWII (PS4)", "M", 6.21],
+["Call of Duty: Black Ops 3 (PS4)", "M", 6.05],
+["Call of Duty: Black Ops II (PS3)", "M", 5.88],
+["Call of Duty: Modern Warfare 3 (PS3)", "M", 5.78],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div3'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawTable4() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('string', 'Symbole ESRB');
+        data.addColumn('number', 'Ventes japonaises (en millions)');
+        data.addRows([
+		["Yokai Watch 2: Psychic Specters (3DS)", "E10", 2.69],
+["Monster Hunter: World (PS4)", "T", 2.17],
+["Final Fantasy XIII (PS3)", "T", 1.87],
+["PaRappa The Rapper (PS)", "E", 1.46],
+["Dragon Quest XI: Echoes of an Elusive Age (PS4)", "T", 1.43],
+["Crash Bandicoot 3: Warped (PS)", "E", 1.42],
+["Hot Shots Golf 3 (PS2)", "E", 1.38],
+["Tekken 2 (PS)", "T", 1.36],
+["Hot Shots Golf Fore! (PS2)", "E", 1.34],
+["Crash Bandicoot 2: Cortex Strikes Back (PS)", "E", 1.31],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div4'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+    </script>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">Les jeux vidéo en chiffres</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li><a href="index.html">Accueil</a></li>
+												<li><a href="demarche.xml">Démarche</a></li>
+												<li class="current_page_item">
+													<a href="#">Résultats</a>
+													<ul>
+														<li><a href="basique.html">Basique</a></li>
+														<li><a href="ventes.html">Ventes</a></li>
+														<li><a href="critique.html">Critique et ventes</a></li>
+														<li><a href="esrb.html">ESRB et ventes</a></li>
+													</ul>
+												</li>
+												<li><a href="remarques.html">Remarques</a></li>
+												
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header class="major">
+												<h2>ESRB et ventes</h2>
+												<p align="justify">Présentation des résultats des requêtes XQuery sur le fichier "plus_esrb_sales.xml"</p>
+											</header>
+											<p align="justify">Vous trouverez sur cette page une présentation des différents résultats obtenus grâce à nos requêtes XQuery appliquées au fichier XML "plus_esrb_sales". Nous avons voulu, grâce à ces requêtes, obtenir des résultats concernant les symboles ESRB attribués aux jeux vidéo en fonction de certains critères dont les ventes.</p>
+											
+											<h3>Répartition des jeux vidéo par symbole ESRB</h3>
+											<div align="center"><div id="piechart" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous montre la répartition des jeux vidéo en fonction de leur symbole ESRB. Nous pouvons voir que plus de 35% des jeux vidéo de nos données présentent un symbole ESRB "T" ("Teen", "Adolescents"). Il s'agit de jeux convenant aux personnes à partir de 13 ans. Viennent ensuite les jeux "E" ("Everyone", "Enfants et adultes") qui conviennent à un public âgé de 6 ans ou plus et qui représentent plus de 27% de nos données. Les jeux de symbole "M" ("Mature", "Jeunes adultes") représentent quant à eux une autre part importante de nos données puisqu'ils représentent 26% de celles-ci. Ces jeux sont destinés à des personnes à partir de 17 ans et peuvent contenir de la violence, des contenus sexuels ou un langage grossier et violent. Enfin, seulement 6,5% de nos données sont des jeux "E10" ("Everyone 10+", "Enfants et adultes 10+") qui sont destinés à un public âgé de plus de 10 ans. Enfin un dernier symbole est présent en très faible proportion puisqu'il représente 0,1% de nos données. Il s'agit du symbole "RP" ("Rating pending", "En attente de classement") qui désigne les jeux qui n'ont pas encore été évalués et qui ne sont donc pas encore sortis.</p>
+											<p align="justify">D'après ce graphique, nous pouvons donc voir que nos données sont essentiellement composées de jeux vidéo pour enfants et adolescents puisque ces jeux représentent en tout presque 74% des données. Les jeux violents pour jeunes adultes et adultes sont donc moins représentés dans notre jeu de données.</p>
+											
+											<h3>Répartition des ventes de jeux vidéo par symbole ESRB et par zone géographique</h3>
+											<div align="center"><div id="piechart2" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous présente les ventes (en millions) de jeux vidéo par symbole ESRB en Amérique du Nord. Les jeux les plus vendus dans cette zone sont principalement des jeux de symbole ESRB "M" puisqu'ils représentent presque 42% des ventes. Les ventes des jeux de symbole "T" et "E" représentent respectivement 26,4% et 24,8% des ventes et donc représentent en tout 51,2% des ventes. Enfin, les jeux "E10" représentent quant à eux moins de 7% des ventes américaines.</p>
+											
+											<div align="center"><div id="piechart3" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce graphique nous présente les ventes (en millions) de jeux vidéo par symbole ESRB en Europe. Les jeux les plus vendus dans cette zone sont principalement des jeux de symbole "M" puisqu'ils représentent plus de 40% des ventes européennes. Les ventes de jeux de symbole "E" et "T" représentent respectivement 30,5% et 22,2% des ventes et donc représentent en tout 52,7% des ventes. Enfin, les jeux "E10" représentent moins de 7% des ventes européennes.</p>
+											
+											<div align="center"><div id="piechart4" style="width: 900px; height: 500px;"></div></div>
+											<p align="justify">Ce dernier graphique nous présente les ventes (en millions) de jeux vidéo par symbole ESRB au Japon. Les jeux les plus vendus dans cette zone sont principalement des jeux de symbole "T" qui représentent plus de 37% des ventes. Viennent ensuite les jeux de symbole "E" qui représentent plus de 33% des ventes japonaises. Ces deux catégories représentent entre elles 70,9% des ventes de jeux au Japon. Enfin, les jeux de symbole "M" ne représentent que 20,6% des ventes et les jeux E10, quant à eux, représentent 8,4% des ventes japonaises.</p>
+											
+											<p align="justify">En analysant ces trois graphiques, nous pouvons encore une fois constater des différences et similarités de consommation entre les différentes zones géographiques. En effet, nous voyons que l'Amérique du Nord et l'Europe présentent des ventes assez similaires par symbole ESRB. Pour les deux zones, les jeux classés "M" sont les plus vendus et les jeux classés "T" et "E" représentent à eux deux un peu plus de 50% des ventes. Le Japon se démarque encore une fois de ces deux zones, avec des ventes de jeux de symboles "T" et "E" représentant 70,9% des ventes et des ventes de jeux de symboles "M" ne représentant qu'un peu plus de 20% des ventes. Ainsi, nous pouvons voir que l'Amérique du Nord et l'Europe sont d'importants consommateurs autant de jeux assez violents pour jeunes adultes que de jeux pour enfants et adolescents. Au contraire, le Japon consomme davantage de jeux pour enfants et adolescents et montre de faibles ventes de jeux violents pour jeunes adultes.</p>
+											
+											<h3>Top 10 des jeux vidéo les plus populaires par zone géographique</h3>
+											<p align="justify">Les quatre tableaux ci-dessous nous présentent respectivement les 10 jeux les plus populaires dans le monde, en Amérique du Nord, en Europe, et au Japon. Le critère de popularité est ici représenté par les ventes de jeux dans chaque zone. Le symbole ESRB est affiché pour chaque jeu afin de pouvoir voir le top 10 des jeux les plus vendus selon leur symbole ESRB pour chaque région.</p>
+											<div id="table_div" align="center"></div>
+											<p></p>
+											<div id="table_div2" align="center"></div>
+											<p></p>
+											<div id="table_div3" align="center"></div>
+											<p></p>
+											<div id="table_div4" align="center"></div>
+											<p></p>
+											<p align="justify">Ces différents tableaux nous confirment les informations présentées dans les graphiques de répartitions des ventes de jeux vidéo par symbole ESRB et par zone géographique. En effet, les 10 jeux les plus populaires en Amérique du Nord sont tous de symbole ESRB "M", tout comme le classement des 10 jeux les plus populaires dans le monde. Concernant l'Europe, 7 jeux sur 10 sont également des jeux de type ESRB "M" et 3 sur 10 sont de type ESRB "E". Enfin, le Japon nous présente une répartition des 10 jeux les plus populaires entre les symboles ESRB "T" et "E", ainsi qu'un jeu noté "E10".</p>
+											<p align="justify">Ainsi, l'Amérique du Nord et l'Europe apparaissent encore une fois assez similaires sur le plan des symboles ESRB. Les résultats de ces deux zones correspondent également à ceux du monde entier. Le Japon se démarque toujours en montrant une tendance inverse à celle des autres zones.</p>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Les jeux vidéos en chiffres. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

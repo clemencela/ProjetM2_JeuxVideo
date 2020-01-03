@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu');
+        data.addColumn('string', 'Plateforme');
+        data.addColumn('string', 'Genre');
+		data.addColumn('number', 'Note de la critique');
+        data.addRows([
+		["Grand Theft Auto IV", "X360", "Action", 10.0],
+["Grand Theft Auto IV", "PS3", "Action", 10.0],
+["Dragon Quest XI: Echoes of an Elusive Age", "PS4", "Role-Playing", 10.0],
+["Red Dead Redemption: Undead Nightmare", "PS3", "Action", 10.0],
+["Red Dead Redemption: Undead Nightmare", "X360", "Action", 10.0],
+["Red Dead Redemption 2", "PS4", "Action-Adventure", 9.8],
+["Grand Theft Auto V", "PS4", "Action", 9.7],
+["God of War (2018)", "PS4", "Action", 9.7],
+["The Orange Box", "X360", "Shooter", 9.7],
+["Grand Theft Auto: Vice City", "PS2", "Action", 9.6],
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '50%', height: '50%'});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="table_div" align="center"></div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+for $game in /collection/game
+let $y := $game/year
+let $g := $game/genre
+let $p := $game/year - ($game/year mod 10)
+group by $p,$g
+order by $p ascending
+return
+<result><year>{$p}-{$p+9}</year><genre>{$g}</genre><count>{count($game)}</count></result>[$p>1989 and $p<2020 and $g!="Misc"]

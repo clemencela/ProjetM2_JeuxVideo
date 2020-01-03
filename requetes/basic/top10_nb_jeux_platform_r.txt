@@ -1,0 +1,40 @@
+<result>
+  <platform>PC</platform>
+  <count>10572</count>
+</result>
+<result>
+  <platform>PS2</platform>
+  <count>3560</count>
+</result>
+<result>
+  <platform>DS</platform>
+  <count>3263</count>
+</result>
+<result>
+  <platform>PS</platform>
+  <count>2702</count>
+</result>
+<result>
+  <platform>XBL</platform>
+  <count>2099</count>
+</result>
+<result>
+  <platform>PSN</platform>
+  <count>1981</count>
+</result>
+<result>
+  <platform>PS3</platform>
+  <count>1846</count>
+</result>
+<result>
+  <platform>PSP</platform>
+  <count>1793</count>
+</result>
+<result>
+  <platform>X360</platform>
+  <count>1685</count>
+</result>
+<result>
+  <platform>GBA</platform>
+  <count>1657</count>
+</result>

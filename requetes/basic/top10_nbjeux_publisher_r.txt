@@ -1,0 +1,40 @@
+<result>
+  <publisher>Sega</publisher>
+  <count>2085</count>
+</result>
+<result>
+  <publisher>Activision</publisher>
+  <count>1519</count>
+</result>
+<result>
+  <publisher>Ubisoft</publisher>
+  <count>1518</count>
+</result>
+<result>
+  <publisher>Electronic Arts</publisher>
+  <count>1497</count>
+</result>
+<result>
+  <publisher>Konami</publisher>
+  <count>1495</count>
+</result>
+<result>
+  <publisher>Sony Computer Entertainment</publisher>
+  <count>1354</count>
+</result>
+<result>
+  <publisher>Nintendo</publisher>
+  <count>1351</count>
+</result>
+<result>
+  <publisher>Microsoft</publisher>
+  <count>1267</count>
+</result>
+<result>
+  <publisher>THQ</publisher>
+  <count>1065</count>
+</result>
+<result>
+  <publisher>Capcom</publisher>
+  <count>964</count>
+</result>

@@ -1,0 +1,255 @@
+<result>
+  <year>1990-1999</year>
+  <genre>Role-Playing</genre>
+  <count>851</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Platform</genre>
+  <count>1116</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Racing</genre>
+  <count>607</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Strategy</genre>
+  <count>784</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Fighting</genre>
+  <count>628</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Shooter</genre>
+  <count>915</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Adventure</genre>
+  <count>786</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Action</genre>
+  <count>1122</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Puzzle</genre>
+  <count>584</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Simulation</genre>
+  <count>503</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Sports</genre>
+  <count>1326</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Visual Novel</genre>
+  <count>3</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Action-Adventure</genre>
+  <count>9</count>
+</result>
+<result>
+  <year>1990-1999</year>
+  <genre>Education</genre>
+  <count>4</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Sports</genre>
+  <count>2554</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Racing</genre>
+  <count>1587</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Platform</genre>
+  <count>1184</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Simulation</genre>
+  <count>1276</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Role-Playing</genre>
+  <count>1702</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Action</genre>
+  <count>2713</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Shooter</genre>
+  <count>1906</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Fighting</genre>
+  <count>787</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Strategy</genre>
+  <count>1482</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Adventure</genre>
+  <count>2386</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>MMO</genre>
+  <count>7</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Music</genre>
+  <count>6</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Puzzle</genre>
+  <count>1359</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Party</genre>
+  <count>13</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Action-Adventure</genre>
+  <count>32</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Sandbox</genre>
+  <count>2</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Visual Novel</genre>
+  <count>7</count>
+</result>
+<result>
+  <year>2000-2009</year>
+  <genre>Education</genre>
+  <count>2</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Shooter</genre>
+  <count>1358</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Party</genre>
+  <count>56</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Action</genre>
+  <count>3035</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Racing</genre>
+  <count>717</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Role-Playing</genre>
+  <count>1730</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Action-Adventure</genre>
+  <count>508</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Platform</genre>
+  <count>884</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Simulation</genre>
+  <count>852</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Fighting</genre>
+  <count>604</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Sports</genre>
+  <count>1133</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Music</genre>
+  <count>186</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Strategy</genre>
+  <count>875</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Adventure</genre>
+  <count>1808</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>MMO</genre>
+  <count>65</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Puzzle</genre>
+  <count>1056</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Sandbox</genre>
+  <count>7</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Visual Novel</genre>
+  <count>235</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Board Game</genre>
+  <count>15</count>
+</result>
+<result>
+  <year>2010-2019</year>
+  <genre>Education</genre>
+  <count>3</count>
+</result>

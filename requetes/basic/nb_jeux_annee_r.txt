@@ -1,0 +1,188 @@
+<result>
+  <year>2006</year>
+  <count>2111</count>
+</result>
+<result>
+  <year>1985</year>
+  <count>93</count>
+</result>
+<result>
+  <year>2008</year>
+  <count>2974</count>
+</result>
+<result>
+  <year>2017</year>
+  <count>1486</count>
+</result>
+<result>
+  <year>2009</year>
+  <count>4506</count>
+</result>
+<result>
+  <year>1998</year>
+  <count>1094</count>
+</result>
+<result>
+  <year>1989</year>
+  <count>436</count>
+</result>
+<result>
+  <year>2010</year>
+  <count>3661</count>
+</result>
+<result>
+  <year>2007</year>
+  <count>2572</count>
+</result>
+<result>
+  <year>2005</year>
+  <count>1821</count>
+</result>
+<result>
+  <year>2000</year>
+  <count>1561</count>
+</result>
+<result>
+  <year>1991</year>
+  <count>786</count>
+</result>
+<result>
+  <year>2013</year>
+  <count>1723</count>
+</result>
+<result>
+  <year>2014</year>
+  <count>2904</count>
+</result>
+<result>
+  <year>2004</year>
+  <count>1610</count>
+</result>
+<result>
+  <year>2011</year>
+  <count>3488</count>
+</result>
+<result>
+  <year>1990</year>
+  <count>666</count>
+</result>
+<result>
+  <year>2003</year>
+  <count>1738</count>
+</result>
+<result>
+  <year>2002</year>
+  <count>1736</count>
+</result>
+<result>
+  <year>2016</year>
+  <count>1238</count>
+</result>
+<result>
+  <year>2015</year>
+  <count>1633</count>
+</result>
+<result>
+  <year>2001</year>
+  <count>1492</count>
+</result>
+<result>
+  <year>1999</year>
+  <count>1284</count>
+</result>
+<result>
+  <year>2018</year>
+  <count>1482</count>
+</result>
+<result>
+  <year>2012</year>
+  <count>1559</count>
+</result>
+<result>
+  <year>1996</year>
+  <count>1220</count>
+</result>
+<result>
+  <year>1992</year>
+  <count>935</count>
+</result>
+<result>
+  <year>1993</year>
+  <count>1043</count>
+</result>
+<result>
+  <year>1997</year>
+  <count>1030</count>
+</result>
+<result>
+  <year>1994</year>
+  <count>1163</count>
+</result>
+<result>
+  <year>1982</year>
+  <count>214</count>
+</result>
+<result>
+  <year>1988</year>
+  <count>282</count>
+</result>
+<result>
+  <year>1987</year>
+  <count>259</count>
+</result>
+<result>
+  <year>1995</year>
+  <count>1162</count>
+</result>
+<result>
+  <year>1981</year>
+  <count>37</count>
+</result>
+<result>
+  <year>1986</year>
+  <count>146</count>
+</result>
+<result>
+  <year>1978</year>
+  <count>48</count>
+</result>
+<result>
+  <year>1983</year>
+  <count>300</count>
+</result>
+<result>
+  <year>2020</year>
+  <count>331</count>
+</result>
+<result>
+  <year>1984</year>
+  <count>88</count>
+</result>
+<result>
+  <year>1977</year>
+  <count>12</count>
+</result>
+<result>
+  <year>2019</year>
+  <count>729</count>
+</result>
+<result>
+  <year>1980</year>
+  <count>35</count>
+</result>
+<result>
+  <year>1970</year>
+  <count>104</count>
+</result>
+<result>
+  <year>1979</year>
+  <count>5</count>
+</result>
+<result>
+  <year>1975</year>
+  <count>1</count>
+</result>
+<result>
+  <year>1973</year>
+  <count>1</count>
+</result>

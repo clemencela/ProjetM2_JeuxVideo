@@ -1,0 +1,4 @@
+for $year in distinct-values(/collection/game/year)
+let $count := count(/collection/game[year = $year])
+return
+<result><year>{$year}</year><count>{$count}</count></result>

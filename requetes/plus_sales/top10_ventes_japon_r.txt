@@ -1,0 +1,50 @@
+<result>
+  <name>Yokai Watch 2: Psychic Specters</name>
+  <platform>3DS</platform>
+  <sales>2.69</sales>
+</result>
+<result>
+  <name>Monster Hunter: World</name>
+  <platform>PS4</platform>
+  <sales>2.17</sales>
+</result>
+<result>
+  <name>Hot Shots Golf</name>
+  <platform>PSPS</platform>
+  <sales>2.13</sales>
+</result>
+<result>
+  <name>Final Fantasy XIII</name>
+  <platform>PS3</platform>
+  <sales>1.87</sales>
+</result>
+<result>
+  <name>Hot Shots Golf 2</name>
+  <platform>PS</platform>
+  <sales>1.48</sales>
+</result>
+<result>
+  <name>PaRappa The Rapper</name>
+  <platform>PS</platform>
+  <sales>1.46</sales>
+</result>
+<result>
+  <name>Dragon Quest XI: Echoes of an Elusive Age</name>
+  <platform>PS4</platform>
+  <sales>1.43</sales>
+</result>
+<result>
+  <name>Crash Bandicoot 3: Warped</name>
+  <platform>PS</platform>
+  <sales>1.42</sales>
+</result>
+<result>
+  <name>Hot Shots Golf 3</name>
+  <platform>PS2</platform>
+  <sales>1.38</sales>
+</result>
+<result>
+  <name>Tekken 2</name>
+  <platform>PS</platform>
+  <sales>1.36</sales>
+</result>

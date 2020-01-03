@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Critique et ventes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table', 'corechart']});
+      google.charts.setOnLoadCallback(drawTable);
+	  google.charts.setOnLoadCallback(drawChart);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu');
+        data.addColumn('string', 'Plateforme');
+        data.addColumn('string', 'Genre');
+		data.addColumn('number', 'Note de la critique');
+        data.addRows([
+		["Grand Theft Auto IV", "X360", "Action", 10.0],
+["Grand Theft Auto IV", "PS3", "Action", 10.0],
+["Dragon Quest XI: Echoes of an Elusive Age", "PS4", "Role-Playing", 10.0],
+["Red Dead Redemption: Undead Nightmare", "PS3", "Action", 10.0],
+["Red Dead Redemption: Undead Nightmare", "X360", "Action", 10.0],
+["Red Dead Redemption 2", "PS4", "Action-Adventure", 9.8],
+["Grand Theft Auto V", "PS4", "Action", 9.7],
+["God of War (2018)", "PS4", "Action", 9.7],
+["The Orange Box", "X360", "Shooter", 9.7],
+["Grand Theft Auto: Vice City", "PS2", "Action", 9.6],
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '70%', height: '100%'});
+      }
+	  
+	  function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+		["Titre du jeu", "Ventes mondiales", "Ventes américaines", "Ventes européennes", "Ventes japonaises"],
+["Grand Theft Auto IV (X360)", 11.09, 6.8, 3.11, 0.14],
+["Grand Theft Auto IV (PS3)", 10.57, 4.79, 3.73, 0.44],
+["Dragon Quest XI: Echoes of an Elusive Age (PS4)", 2.04, 0.29, 0.22, 1.43],
+["Red Dead Redemption: Undead Nightmare (PS3)", 1.18, 0.47, 0.45, 0.06],
+["Red Dead Redemption: Undead Nightmare (X360)", 1.11, 0.61, 0.38, 0.02],
+["Red Dead Redemption 2 (PS4)", 13.94, 5.26, 6.21, 0.21],
+["Grand Theft Auto V (PS4)", 19.39, 6.06, 9.71, 0.6],
+["God of War (2018) (PS4)", 6.15, 2.83, 2.17, 0.13],
+["The Orange Box (X360)", 1.82, 1.09, 0.53, 0.02],
+["Grand Theft Auto: Vice City (PS2)", 16.15, 8.41, 5.49, 0.47],
+         
+        ]);
+
+        var options = {
+          title: 'Top 10 des jeux les mieux notés avec leurs ventes (en millions) dans le monde',
+          curveType: 'function',
+          legend: { position: 'right' },
+		  animation: {duration: 1000, startup: true, easing: 'inAndOut'}
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="index.html" id="logo">Les jeux vidéo en chiffres</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+												<li><a href="index.html">Accueil</a></li>
+												<li><a href="demarche.xml">Démarche</a></li>
+												<li class="current_page_item">
+													<a href="#">Résultats</a>
+													<ul>
+														<li><a href="basique.html">Basique</a></li>
+														<li><a href="ventes.html">Ventes</a></li>
+														<li><a href="critique.html">Critique et ventes</a></li>
+														<li><a href="esrb.html">ESRB et ventes</a></li>
+													</ul>
+												</li>
+												<li><a href="remarques.html">Remarques</a></li>
+												
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header class="major">
+												<h2>Critique et ventes</h2>
+												<p align="justify">Présentation des résultats des requêtes XQuery sur le fichier "plus_critic_sales.xml"</p>
+											</header>
+											<p align="justify">Vous trouverez sur cette page une présentation des différents résultats obtenus grâce à nos requêtes XQuery appliquées au fichier XML "plus_critic_sales". Nous avons voulu, grâce à ces requêtes, obtenir des résultats concernant les notes des critiques obtenues par les jeux vidéo en fonction de certains critères dont les ventes.</p>
+											
+											<h3>Top 10 des jeux vidéo les mieux notés par la critique</h3>
+											<div id="table_div" align="center"></div>
+											<p></p>
+											<p align="justify">Ce tableau nous présente le classement des 10 jeux les mieux notés par la critique, en affichant pour chaque jeux vidéo la plateforme et le genre. Nous retrouvons dans ce classement les jeux les plus vendus dans le monde présentés sur la page "Ventes" : les séries "Grand Theft Auto", "Dragon Quest" ou encore "Red Dead Redemption" par exemple. Nous voyons également que seulement cinq jeux possèdent la note de 10/10 et que les notes des autres jeux du classement baissent relativement rapidement. Par ailleurs, ces jeux les mieux notés sont pour la plupart des jeux d'action, un des genres les plus vendus en Amérique du Nord et en Europe. Enfin, nous voyons que ces jeux les mieux notés sont des jeux sortis sur des plateformes Sony (PS3, PS4, PS2) ou Microsoft (X360).</p>
+											
+											<h3>Top 10 des jeux vidéo les mieux notés par la critique avec leurs ventes</h3>
+											<div align="center"><div id="curve_chart" style="width: 900px; height: 500px"></div></div>
+											<p></p>
+											<p align="justify">Ce graphique nous montre les ventes mondiales (en millions) des jeux les mieux notés par la critique présentés dans le classement ci-dessus. Grâce à ces courbes, nous pouvons comparer les ventes selon les zones géographiques pour savoir si un jeu bien noté par la critique a été particulièrement vendu ou non dans un endroit spécifique. Ainsi, nous pouvons voir que le jeu "Dragon Quest XI: Echoes of an Elusive Age" sur PS4 a connu plus de succès au Japon qu'en Europe ou qu'en Amérique du Nord. Ce jeu figure d'ailleurs dans le classement des jeux les plus populaires au Japon. Par ailleurs, nous pouvons voir sur ce graphique que le jeu le mieux noté n'est pas celui qui s'est le plus vendu dans le monde. En effet, le jeu le plus vendu est "Grand Theft Auto V" sur PS4 qui présente la note de 9,7 sur 10, ce qui reste tout de même une très bonne note. Ce jeu a d'ailleurs connu des ventes plus importantes en Europe qu'en Amérique du Nord.</p>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Les jeux vidéos en chiffres. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

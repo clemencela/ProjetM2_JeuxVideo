@@ -1,0 +1,5 @@
+for $esrb in distinct-values(/collection/game/esrb_rating)
+let $count := count(/collection/game[esrb_rating = $esrb])
+order by $count descending
+return
+<result><esrb>{$esrb}</esrb><count>{$count}</count></result>

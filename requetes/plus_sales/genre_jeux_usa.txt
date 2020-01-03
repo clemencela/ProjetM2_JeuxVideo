@@ -1,0 +1,5 @@
+for $game in /collection/game
+group by $d := $game/genre
+where $d!="Misc"
+order by $d
+return <result><genre>{$d}</genre><total>{sum($game/distribution/sales[@area="usa"]/text())}</total></result>

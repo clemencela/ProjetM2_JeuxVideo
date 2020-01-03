@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Titre du jeu (+ plateforme)');
+        data.addColumn('string', 'Symbole ESRB');
+        data.addColumn('number', 'Ventes américaines (en millions)');
+        data.addRows([
+		["Call of Duty: Black Ops (X360)", "M", 9.76],
+["Call of Duty: Modern Warfare 3 (X360)", "M", 9.07],
+["Grand Theft Auto V (X360)", "M", 9.06],
+["Call of Duty: Modern Warfare 2 (X360)", "M", 8.54],
+["Grand Theft Auto: Vice City (PS2)", "M", 8.41],
+["Call of Duty: Black Ops II (X360)", "M", 8.27],
+["Halo: Reach (X360)", "M", 7.08],
+["Grand Theft Auto III (PS2)", "M", 6.99],
+["Grand Theft Auto IV (X360)", "M", 6.8],
+["Call of Duty: Ghosts (X360)", "M", 6.76],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '50%', height: '50%'});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="table_div" align="center"></div>
+  </body>
+</html>

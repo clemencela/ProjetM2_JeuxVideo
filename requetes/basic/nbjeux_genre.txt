@@ -1,0 +1,5 @@
+for $genre in distinct-values(/collection/game/genre)
+let $count := count(/collection/game[genre = $genre])
+order by $count descending
+return
+<result><genre>{$genre}</genre><count>{$count}</count></result>[$genre!="Misc"]

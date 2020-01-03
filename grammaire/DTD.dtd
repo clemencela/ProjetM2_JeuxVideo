@@ -1,80 +1,87 @@
-<!-- Le document de base qui permet de valider nos documents XML est la DTD (cf. photo d'un fichier xml validé). 
-Cette DTD permet de décrire la structure logique et physique des quatres documents xml, 
-c'est-à-dire indiquer les noms des éléments qui peuvent apparaitre et leur contenu ainsi que les entités globales qui nous évitent les répétitions. 
-Nous avons utilisé une entité pour le type de donnée #PCDATA qui est une chaine de caractères. 
-Il n'est malheureusement pas possible de donner plus de précision concernant le type de donnée (int, float, etc.) dans un schéma DTD. 
-Vous poucez visualiser ce-dessous ce schéma DTD: 
--->
-
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Début de la Document Type Definition avec un élément ENTITY pour le type #PCDATA (chaine de caractères) -->
+<!-- Début de la Document Type Definition avec un élément ENTITY pour le type #PCDATA (chaîne de caractères)
+    Permet de faire référence au type #PCDATA grâce à la chaîne STR -->
 
 <!ENTITY % STR "#PCDATA" >
 
-<!-- ELEMENT Collection
+<!-- ELEMENT collection
 	On a au moins un élément game dans l'élément collection -->
 
 <!ELEMENT collection (game+)>
 
-<!-- ELEMENT Game 
-	sous-éléments obligatoires (une fois) divisibles de type STR
-		name, production
-	sous-éléments obligatoires (une fois) non divisibles de type STR
-		genre, platform, year 
-	sous-éléments optionnels (0 ou une fois) divibles de type STR
-		distribution
-	sous-éléments optionnels (0 ou une fois) non divibles de type STR	
-		critic_score, esrb_rating
--->
+<!-- ELEMENT game 
+    L'élément game doit contenir obligatoirement :
+    un élément name
+    un élément genre
+    un élément platform
+    un élément production
+    un élément year
+    
+    L'élément game peut contenir ou non :
+    un élément distribution
+    un élément critic_score
+    un élément esrb_rating -->
 
 <!ELEMENT game (name,genre,platform,production,year,distribution?,critic_score?,esrb_rating?) >
 
 <!-- ATTLIST permet de définir l'attribut rank de l'élément game, 
-	il est spécifié comme type CDATA c'est-à-dire chaine de caractères et il est obligatoire -->
+	il est spécifié comme type CDATA c'est-à-dire chaîne de caractères et il est obligatoire -->
 
-<!ATTLIST game 
-               rank CDATA #REQUIRED >
+<!ATTLIST game rank CDATA #REQUIRED >
 
-<!-- ELEMENT Name
-		On a un élément official de type STR dans l'élément name
-		On a un élément ascii de type STR dans l'élément name
--->
+<!-- ELEMENT name
+    L'élément name contient toujours un élément official et un élément ascii
+    On a un élément official de type STR dans l'élément name
+	On a un élément ascii de type STR dans l'élément name -->
 
 <!ELEMENT name (official,ascii) >
 <!ELEMENT official (%STR;) >
 <!ELEMENT ascii (%STR;) >
+
+<!-- ELEMENT genre
+    L'élément genre est de type STR -->
+    
 <!ELEMENT genre (%STR;) >
+
+<!--  ELEMENT platform
+    L'élément platform est de type STR -->
+    
 <!ELEMENT platform (%STR;) >
 
-<!-- ELEMENT Production
-		On a un élément publisher de type STR dans l'élément production
-		On a un élément developer de type STR dans l'élément production
--->
+<!-- ELEMENT production
+    L'élément production contient toujours un élément publisher et un élément developer
+	On a un élément publisher de type STR dans l'élément production
+	On a un élément developer de type STR dans l'élément production -->
 
 <!ELEMENT production (publisher,developer) >
 <!ELEMENT publisher (%STR;) >
 <!ELEMENT developer (%STR;) >
+
+<!-- ELEMENT year
+    L'élément year est de type STR -->
+    
 <!ELEMENT year (%STR;) >
 
-<!-- ELEMENT Distribution 
-		On a un élément sales de de type STR dans l'élément distribution
--->
+<!-- ELEMENT distribution
+    L'élément distribution peut contenir un ou plusieurs éléments sales
+	Ce ou ces éléments sales sont de type STR dans l'élément distribution -->
 
 <!ELEMENT distribution (sales+) >
-
-<!-- ELEMENT Sales
-		Il y a au moins un élément sales dans l'élément distribution
--->
-
 <!ELEMENT sales (%STR;) >
 
 <!-- Ici on définit l'attribut area pour l'élément sales qui prendra comme valeur 
-soit "global", soit "usa", soit "europe", soit "japan". 
-Pour un choix entre plusieurs éléments il n'est pas obligé de précisé le type CDATA. L'attribut est obligatoire 
--->
+    soit "global", soit "usa", soit "europe", soit "japan". 
+    Pour un choix entre plusieurs éléments il n'est pas obligé de préciser le type CDATA. L'attribut est obligatoire -->
 
-<!ATTLIST sales
-                area (global|usa|europe|japan) #REQUIRED >
+<!ATTLIST sales area (global|usa|europe|japan) #REQUIRED >
+
+<!-- ELEMENT critic_score 
+    L'élément critic_score est de type STR -->
+    
 <!ELEMENT critic_score (%STR;) >
+
+<!-- ELEMENT esrb_rating 
+    L'élément esrb_rating est de type STR -->
+    
 <!ELEMENT esrb_rating (%STR;) >

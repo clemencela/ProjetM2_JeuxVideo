@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+		["Année", "Nombre de jeux"],
+["2006", 2111],
+["1985", 93],
+["2008", 2974],
+["2017", 1486],
+["2009", 4506],
+["1998", 1094],
+["1989", 436],
+["2010", 3661],
+["2007", 2572],
+["2005", 1821],
+["2000", 1561],
+["1991", 786],
+["2013", 1723],
+["2014", 2904],
+["2004", 1610],
+["2011", 3488],
+["1990", 666],
+["2003", 1738],
+["2002", 1736],
+["2016", 1238],
+["2015", 1633],
+["2001", 1492],
+["1999", 1284],
+["2018", 1482],
+["2012", 1559],
+["1996", 1220],
+["1992", 935],
+["1993", 1043],
+["1997", 1030],
+["1994", 1163],
+["1982", 214],
+["1988", 282],
+["1987", 259],
+["1995", 1162],
+["1981", 37],
+["1986", 146],
+["1978", 48],
+["1983", 300],
+["2020", 331],
+["1984", 88],
+["1977", 12],
+["2019", 729],
+["1980", 35],
+["1970", 104],
+["1979", 5],
+["1975", 1],
+["1973", 1],
+        ]);
+		
+		data.sort([{column: 0}]);
+
+        var options = {
+          title: 'Nombre de jeux vidéo par année',
+          legend: { position: 'bottom' },
+		  animation: {duration: 1000, startup: true, easing: 'inAndOut'},
+		  colors:['#ff3399']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>

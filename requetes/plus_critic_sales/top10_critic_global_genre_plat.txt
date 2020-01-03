@@ -1,0 +1,9 @@
+(for $game in /collection/game
+let $name := $game/name/official[text()]
+let $genre := $game/genre/text()
+let $plt := $game/platform/text()
+let $critic := $game/critic_score[text()]
+group by $name, $critic, $genre, $plt
+order by xs:decimal($critic) descending
+return
+<result><name>{$name}</name><platform>{$plt}</platform><genre>{$genre}</genre><critic>{$critic}</critic></result>)[position() = 1 to 10]

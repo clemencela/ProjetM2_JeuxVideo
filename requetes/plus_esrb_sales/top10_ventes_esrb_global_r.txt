@@ -1,0 +1,60 @@
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>PS3</platform>
+  <esrb>M</esrb>
+  <sales>20.32</sales>
+</result>
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>PS4</platform>
+  <esrb>M</esrb>
+  <sales>19.39</sales>
+</result>
+<result>
+  <name>Grand Theft Auto: Vice City</name>
+  <platform>PS2</platform>
+  <esrb>M</esrb>
+  <sales>16.15</sales>
+</result>
+<result>
+  <name>Grand Theft Auto V</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>15.86</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops 3</name>
+  <platform>PS4</platform>
+  <esrb>M</esrb>
+  <sales>15.09</sales>
+</result>
+<result>
+  <name>Call of Duty: Modern Warfare 3</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>14.82</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>14.74</sales>
+</result>
+<result>
+  <name>Red Dead Redemption 2</name>
+  <platform>PS4</platform>
+  <esrb>M</esrb>
+  <sales>13.94</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops II</name>
+  <platform>X360</platform>
+  <esrb>M</esrb>
+  <sales>13.86</sales>
+</result>
+<result>
+  <name>Call of Duty: Black Ops II</name>
+  <platform>PS3</platform>
+  <esrb>M</esrb>
+  <sales>13.8</sales>
+</result>

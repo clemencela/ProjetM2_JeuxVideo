@@ -1,0 +1,20 @@
+<result>
+  <esrb>M</esrb>
+  <sales>395.4099999999989</sales>
+</result>
+<result>
+  <esrb>E</esrb>
+  <sales>296.44999999999874</sales>
+</result>
+<result>
+  <esrb>T</esrb>
+  <sales>216.0800000000003</sales>
+</result>
+<result>
+  <esrb>E10</esrb>
+  <sales>63.55000000000004</sales>
+</result>
+<result>
+  <esrb>RP</esrb>
+  <sales>0.26</sales>
+</result>
